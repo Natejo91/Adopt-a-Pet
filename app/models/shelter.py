@@ -5,9 +5,9 @@ class Shelter(db.Model):
     __tablename__ = "shelters"
 
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(50), nullable=False)
+    name = db.Column(db.String(100), nullable=False)
     address = db.Column(db.String(200), nullable=False)
-    phone_number = db.Column(db.String(14), nullable=False)
+    phone_number = db.Column(db.String(20), nullable=False)
     email = db.Column(db.String(100), nullable=False)
     office_hours = db.Column(db.String(200))
     description = db.Column(db.String(2000))
