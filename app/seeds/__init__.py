@@ -1,6 +1,7 @@
 from flask.cli import AppGroup
 from .users import seed_users, undo_users
 from .shelters import seed_shelters, undo_shelters
+from .breeds import seed_breeds, undo_breeds
 
 # Creates a seed group to hold our commands
 # So we can type `flask seed --help`
@@ -11,6 +12,8 @@ seed_commands = AppGroup('seed')
 def seed():
     seed_users()
     seed_shelters()
+    seed_breeds()
+
     # Add other seed functions here
 
 # Creates the `flask seed undo` command
@@ -18,4 +21,5 @@ def seed():
 def undo():
     undo_users()
     undo_shelter()
+    undo_breeds()
     # Add other undo functions here
