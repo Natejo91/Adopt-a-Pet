@@ -1,24 +1,33 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from 'react-router-dom';
-import { signUp } from '../../store/session';
+import { signUp } from '../../../store/session';
+import './SingUpForm.css';
 
 const SignUpForm = () => {
   const dispatch = useDispatch();
-  const user = useSelector(state => state.session.user);
+  const user = useSelector(state => state.session?.user);
   const [image, setImage] = useState(null);
   const [firstname, setFirstname] = useState("");
   const [lastname, setLastname] = useState("");
   const [email, setEmail] = useState("");
+  const [errors, setErrors]  = useState([]);
   const [zipcode, setZipcode] = useState(1);
   const [password, setPassword] = useState("");
   const [repeatPassword, setRepeatPassword] = useState("");
 
+  const background = document.querySelector('#modal-background')
+
   const onSignUp = async (e) => {
     e.preventDefault();
     if (password === repeatPassword) {
-      await dispatch(signUp(firstname, lastname, email, image, zipcode, password));
-    }
+      const data = await dispatch(signUp(firstname, lastname, email, image, zipcode, password));
+      if (data.errors) {
+        setErrors(data.errors);
+      } else {
+        background.click();
+      }
+    };
   };
 
   const updateFirstname = (e) => {
@@ -56,6 +65,11 @@ const SignUpForm = () => {
 
   return (
     <form onSubmit={onSignUp}>
+      <div>
+        {errors.map((error) => (
+          <div>{error}</div>
+        ))}
+      </div>
       <div>
         <label>First Name</label>
         <input
