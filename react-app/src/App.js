@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch} from "react-redux";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
-import LoginForm from "./components/auth/LoginForm";
-import SignUpForm from "./components/auth/SignUpForm";
-import NavBar from "./components/NavBar";
+import { Route, Switch } from "react-router-dom";
+import LoginForm from "./components/auth/LoginFormModal/LoginForm";
+import SignUpForm from "./components/auth/SignUpFormModal/SignUpForm";
+import NavBar from "./components/NavBar/NavBar";
 import ProtectedRoute from "./components/auth/ProtectedRoute";
-import UsersList from "./components/UsersList";
-import User from "./components/User";
+import UsersList from "./components/UsersList/UsersList";
+import User from "./components/User/User";
 // import { authenticate } from "./services/auth";
 import { authenticate } from "./store/session";
 
@@ -27,7 +27,7 @@ function App() {
   }
 
   return (
-    <BrowserRouter>
+    <>
       <NavBar />
       <Switch>
         <Route path="/login" exact={true}>
@@ -42,11 +42,11 @@ function App() {
         <ProtectedRoute path="/users/:userId" exact={true} >
           <User />
         </ProtectedRoute>
-        <ProtectedRoute path="/" exact={true}>
-          <h1>My Home Page</h1>
-        </ProtectedRoute>
+        <Route path="/" exact={true}>
+          <h1>Home Page</h1>
+        </Route>
       </Switch>
-    </BrowserRouter>
+    </>
   );
 }
 
