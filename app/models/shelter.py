@@ -10,7 +10,8 @@ class Shelter(db.Model):
     phone_number = db.Column(db.String(14), nullable=False)
     email = db.Column(db.String(100), nullable=False)
     office_hours = db.Column(db.String(200))
-    description = db.Column(db.String(2000), nullable=False)
+    description = db.Column(db.String(2000))
+    image_url = db.Column(db.String(2000))
 
 
     def to_dict(self):
@@ -21,7 +22,8 @@ class Shelter(db.Model):
             "phone_number": self.phone_number,
             "email": self.email,
             "office_hours": self.office_hours,
-            "description": self.description
+            "description": self.description,
+            "image_url": self.image_url
         }
 
 

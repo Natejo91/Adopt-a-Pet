@@ -10,7 +10,8 @@ def seed_shelters():
         phone_number = faker.numerify('(###) ### ####'),
         email = faker.email(),
         office_hours = "Monday 11AM-4PM, Tuesday 11AM-6:30PM, Wednesday 11AM-5PM, Thursday 11AM-6:30PM, Friday 11AM-5PM, Saturday 11AM-5PM, Sunday 11AM-4PM",
-        description = faker.sentences(4)
+        description = faker.sentences(4),
+        image_url= None
     )
     db.session.add(shelter1)
 
@@ -20,7 +21,8 @@ def seed_shelters():
         phone_number = faker.numerify('(###) ### ####'),
         email = faker.email(),
         office_hours = "Monday 11AM-4PM, Tuesday 11AM-6:30PM, Wednesday 11AM-5PM, Thursday 11AM-6:30PM, Friday 11AM-5PM, Saturday 11AM-5PM, Sunday 11AM-4PM",
-        description = faker.sentences(4)
+        description = faker.sentences(4),
+        image_url= None
     )
 
     db.session.add(shelter2)
@@ -31,7 +33,8 @@ def seed_shelters():
         phone_number = faker.numerify('(###) ### ####'),
         email = faker.email(),
         office_hours = "Monday 11AM-4PM, Tuesday 11AM-6:30PM, Wednesday 11AM-5PM, Thursday 11AM-6:30PM, Friday 11AM-5PM, Saturday 11AM-5PM, Sunday 11AM-4PM",
-        description = faker.sentences(4)
+        description = faker.sentences(4),
+        image_url= None
     )
 
     db.session.add(shelter3)
@@ -42,7 +45,8 @@ def seed_shelters():
         phone_number = faker.numerify('(###) ### ####'),
         email = faker.email(),
         office_hours = "Monday 11AM-4PM, Tuesday 11AM-6:30PM, Wednesday 11AM-5PM, Thursday 11AM-6:30PM, Friday 11AM-5PM, Saturday 11AM-5PM, Sunday 11AM-4PM",
-        description = faker.sentences(4)
+        description = faker.sentences(4),
+        image_url= None
     )
 
     db.session.add(shelter4)
@@ -53,7 +57,8 @@ def seed_shelters():
         phone_number = faker.numerify('(###) ### ####'),
         email = faker.email(),
         office_hours = "Monday 11AM-4PM, Tuesday 11AM-6:30PM, Wednesday 11AM-5PM, Thursday 11AM-6:30PM, Friday 11AM-5PM, Saturday 11AM-5PM, Sunday 11AM-4PM",
-        description = faker.sentences(4)
+        description = faker.sentences(4),
+        image_url= None
     )
 
     db.session.add(shelter5)
@@ -64,7 +69,8 @@ def seed_shelters():
         phone_number = faker.numerify('(###) ### ####'),
         email = faker.email(),
         office_hours = "Monday 11AM-4PM, Tuesday 11AM-6:30PM, Wednesday 11AM-5PM, Thursday 11AM-6:30PM, Friday 11AM-5PM, Saturday 11AM-5PM, Sunday 11AM-4PM",
-        description = faker.sentences(4)
+        description = faker.sentences(4),
+        image_url= None
     )
 
     db.session.add(shelter6)
@@ -76,7 +82,8 @@ def seed_shelters():
         phone_number = faker.numerify('(###) ### ####'),
         email = faker.email(),
         office_hours = "Monday 11AM-4PM, Tuesday 11AM-6:30PM, Wednesday 11AM-5PM, Thursday 11AM-6:30PM, Friday 11AM-5PM, Saturday 11AM-5PM, Sunday 11AM-4PM",
-        description = faker.sentences(4)
+        description = faker.sentences(4),
+        image_url= None
     )
 
     db.session.add(shelter7)
@@ -87,7 +94,8 @@ def seed_shelters():
         phone_number = faker.numerify('(###) ### ####'),
         email = faker.email(),
         office_hours = "Monday 11AM-4PM, Tuesday 11AM-6:30PM, Wednesday 11AM-5PM, Thursday 11AM-6:30PM, Friday 11AM-5PM, Saturday 11AM-5PM, Sunday 11AM-4PM",
-        description = faker.sentences(4)
+        description = faker.sentences(4),
+        image_url= None
     )
 
     db.session.add(shelter8)
@@ -98,7 +106,8 @@ def seed_shelters():
         phone_number = faker.numerify('(###) ### ####'),
         email = faker.email(),
         office_hours = "Monday 11AM-4PM, Tuesday 11AM-6:30PM, Wednesday 11AM-5PM, Thursday 11AM-6:30PM, Friday 11AM-5PM, Saturday 11AM-5PM, Sunday 11AM-4PM",
-        description = faker.sentences(4)
+        description = faker.sentences(4),
+        image_url= None
     )
 
     db.session.add(shelter9)
@@ -109,7 +118,8 @@ def seed_shelters():
         phone_number = faker.numerify('(###) ### ####'),
         email = faker.email(),
         office_hours = "Monday 11AM-4PM, Tuesday 11AM-6:30PM, Wednesday 11AM-5PM, Thursday 11AM-6:30PM, Friday 11AM-5PM, Saturday 11AM-5PM, Sunday 11AM-4PM",
-        description = faker.sentences(4)
+        description = faker.sentences(4),
+        image_url= None
     )
 
     db.session.add(shelter10)
