@@ -8,6 +8,7 @@ def seed_shelters():
         name = "Animal Care Center",
         address = faker.address(),
         phone_number = faker.numerify('(###) ### ####'),
+        email = faker.email(),
         office_hours = "Monday 11AM-4PM, Tuesday 11AM-6:30PM, Wednesday 11AM-5PM, Thursday 11AM-6:30PM, Friday 11AM-5PM, Saturday 11AM-5PM, Sunday 11AM-4PM",
         description = faker.sentences(4)
     )
@@ -17,6 +18,7 @@ def seed_shelters():
         name = "Green Pastures",
         address = faker.address(),
         phone_number = faker.numerify('(###) ### ####'),
+        email = faker.email(),
         office_hours = "Monday 11AM-4PM, Tuesday 11AM-6:30PM, Wednesday 11AM-5PM, Thursday 11AM-6:30PM, Friday 11AM-5PM, Saturday 11AM-5PM, Sunday 11AM-4PM",
         description = faker.sentences(4)
     )
@@ -27,6 +29,7 @@ def seed_shelters():
         name = "For Pet's Sake",
         address = faker.address(),
         phone_number = faker.numerify('(###) ### ####'),
+        email = faker.email(),
         office_hours = "Monday 11AM-4PM, Tuesday 11AM-6:30PM, Wednesday 11AM-5PM, Thursday 11AM-6:30PM, Friday 11AM-5PM, Saturday 11AM-5PM, Sunday 11AM-4PM",
         description = faker.sentences(4)
     )
@@ -37,6 +40,7 @@ def seed_shelters():
         name = "Besty Beasties",
         address = faker.address(),
         phone_number = faker.numerify('(###) ### ####'),
+        email = faker.email(),
         office_hours = "Monday 11AM-4PM, Tuesday 11AM-6:30PM, Wednesday 11AM-5PM, Thursday 11AM-6:30PM, Friday 11AM-5PM, Saturday 11AM-5PM, Sunday 11AM-4PM",
         description = faker.sentences(4)
     )
@@ -47,6 +51,7 @@ def seed_shelters():
         name = "The Bark Station",
         address = faker.address(),
         phone_number = faker.numerify('(###) ### ####'),
+        email = faker.email(),
         office_hours = "Monday 11AM-4PM, Tuesday 11AM-6:30PM, Wednesday 11AM-5PM, Thursday 11AM-6:30PM, Friday 11AM-5PM, Saturday 11AM-5PM, Sunday 11AM-4PM",
         description = faker.sentences(4)
     )
@@ -57,6 +62,7 @@ def seed_shelters():
         name = "Maw and Paw",
         address = faker.address(),
         phone_number = faker.numerify('(###) ### ####'),
+        email = faker.email(),
         office_hours = "Monday 11AM-4PM, Tuesday 11AM-6:30PM, Wednesday 11AM-5PM, Thursday 11AM-6:30PM, Friday 11AM-5PM, Saturday 11AM-5PM, Sunday 11AM-4PM",
         description = faker.sentences(4)
     )
@@ -68,6 +74,7 @@ def seed_shelters():
         name = "On the Growl",
         address = faker.address(),
         phone_number = faker.numerify('(###) ### ####'),
+        email = faker.email(),
         office_hours = "Monday 11AM-4PM, Tuesday 11AM-6:30PM, Wednesday 11AM-5PM, Thursday 11AM-6:30PM, Friday 11AM-5PM, Saturday 11AM-5PM, Sunday 11AM-4PM",
         description = faker.sentences(4)
     )
@@ -78,6 +85,7 @@ def seed_shelters():
         name = "Paws and Pooches",
         address = faker.address(),
         phone_number = faker.numerify('(###) ### ####'),
+        email = faker.email(),
         office_hours = "Monday 11AM-4PM, Tuesday 11AM-6:30PM, Wednesday 11AM-5PM, Thursday 11AM-6:30PM, Friday 11AM-5PM, Saturday 11AM-5PM, Sunday 11AM-4PM",
         description = faker.sentences(4)
     )
@@ -88,6 +96,7 @@ def seed_shelters():
         name = "Waggamuffins",
         address = faker.address(),
         phone_number = faker.numerify('(###) ### ####'),
+        email = faker.email(),
         office_hours = "Monday 11AM-4PM, Tuesday 11AM-6:30PM, Wednesday 11AM-5PM, Thursday 11AM-6:30PM, Friday 11AM-5PM, Saturday 11AM-5PM, Sunday 11AM-4PM",
         description = faker.sentences(4)
     )
@@ -98,6 +107,7 @@ def seed_shelters():
         name = "Balls of Fluff",
         address = faker.address(),
         phone_number = faker.numerify('(###) ### ####'),
+        email = faker.email(),
         office_hours = "Monday 11AM-4PM, Tuesday 11AM-6:30PM, Wednesday 11AM-5PM, Thursday 11AM-6:30PM, Friday 11AM-5PM, Saturday 11AM-5PM, Sunday 11AM-4PM",
         description = faker.sentences(4)
     )

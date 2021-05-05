@@ -8,6 +8,7 @@ class Shelter(db.Model):
     name = db.Column(db.String(50), nullable=False)
     address = db.Column(db.String(200), nullable=False)
     phone_number = db.Column(db.String(14), nullable=False)
+    email = db.Column(db.String(100), nullable=False)
     office_hours = db.Column(db.String(200))
     description = db.Column(db.String(2000), nullable=False)
 
@@ -18,6 +19,7 @@ class Shelter(db.Model):
             "name": self.name,
             "address": self.address,
             "phone_number": self.phone_number,
+            "email": self.email,
             "office_hours": self.office_hours,
             "description": self.description
         }
