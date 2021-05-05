@@ -34,7 +34,7 @@ def upgrade():
         sa.Column('id', sa.Integer(), nullable=False),
         sa.Column('name', sa.String(length=50), nullable=False),
         sa.Column('address', sa.String(length=200), nullable=False),
-        sa.Column('phone_number', sa.Integer(), nullable=False),
+        sa.Column('phone_number', sa.String(14), nullable=False),
         sa.Column('office_hours', sa.String(200), nullable=False),
         sa.Column('description', sa.String(2000), nullable=False),
         sa.PrimaryKeyConstraint('id')
