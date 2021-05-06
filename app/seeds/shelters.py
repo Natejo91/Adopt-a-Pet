@@ -1,122 +1,61 @@
 from app.models import db, Shelter
-from faker import Faker
+import requests
+import json
 
-faker = Faker()
+
+class BearerAuth(requests.auth.AuthBase):
+    def __init__(self, token):
+        self.token = token
+    def __call__(self, r):
+        r.headers["authorization"] = "Bearer " + self.token
+        return r
+
+def shelters_id():
+    for i in range(15):
+        response = requests.get('https://api.petfinder.com/v2/organizations', auth=BearerAuth('eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJIYWdiU0ZpcWJ6S3lLeHh5dm1OVTlJV1RSVTZTZDBORFo4WmxRU0h1M2lFQlFRbm83WSIsImp0aSI6IjVjZTAyZmYxNDQ1OTA4ZmM5ZTg5NzM0Yzk4NWJiODY5YTU2ZTJiZWY2MTEwYmQxZDgxY2M0Y2QwYjU3NTYxZDUwNzNkMTI0ZjM2M2JiY2RmIiwiaWF0IjoxNjIwMjUyNDE2LCJuYmYiOjE2MjAyNTI0MTYsImV4cCI6MTYyMDI1NjAxNiwic3ViIjoiIiwic2NvcGVzIjpbXX0.fhJS9JcdIq3PMLCr4AHwOIEuQYi97x84W3OAfohcgIUO8Ck6AImAlo6ATrxWTmtQWtT2mzRlff-eLVs57IgEmjmLUwC8jnrLwl7L3YCXOhzsKKcqIm6ipkfzeTB-5jOU4Dvtj61qBarjaQxicpna-FukiVLDONqbT1DLin9rfUnraMJOyZ-yMbu-vn1kzwwOSS0ltJ1_MEMhyNC4gF7hNBIB_LodBHGYwlcoK35CcDT1cfafiWfbhQCM4oZLKHiGz2pqH90DDqpKF6MOcYe5vpCAm9v6xuks-L6G_OIHMGmym96qsAqUxb3jVTVQDkemq-LK-aBjF2wL3dS8poys5w')).json()
+        print(response['organizations'][i]['id'])
+
+# print(shelters_id())
+
+
+shelterIds = [
+    'CO316',
+    'IN220',
+    'OH401',
+    'TX420',
+    'MO556',
+    'IA233',
+    'IN200',
+    'IN40',
+    'TX1920',
+    'CA458',
+    'WI40',
+    'PA546',
+    'OH129',
+    'NM80',
+    'AL254',
+    'OR208'
+]
 
 def seed_shelters():
-    shelter1 = Shelter(
-        name = "Animal Care Center",
-        address = faker.address(),
-        phone_number = faker.numerify('(###) ### ####'),
-        email = faker.email(),
-        office_hours = "Monday 11AM-4PM, Tuesday 11AM-6:30PM, Wednesday 11AM-5PM, Thursday 11AM-6:30PM, Friday 11AM-5PM, Saturday 11AM-5PM, Sunday 11AM-4PM",
-        description = faker.sentences(4)
-    )
-    db.session.add(shelter1)
-
-    shelter2 = Shelter(
-        name = "Green Pastures",
-        address = faker.address(),
-        phone_number = faker.numerify('(###) ### ####'),
-        email = faker.email(),
-        office_hours = "Monday 11AM-4PM, Tuesday 11AM-6:30PM, Wednesday 11AM-5PM, Thursday 11AM-6:30PM, Friday 11AM-5PM, Saturday 11AM-5PM, Sunday 11AM-4PM",
-        description = faker.sentences(4)
-    )
-
-    db.session.add(shelter2)
-
-    shelter3 = Shelter(
-        name = "For Pet's Sake",
-        address = faker.address(),
-        phone_number = faker.numerify('(###) ### ####'),
-        email = faker.email(),
-        office_hours = "Monday 11AM-4PM, Tuesday 11AM-6:30PM, Wednesday 11AM-5PM, Thursday 11AM-6:30PM, Friday 11AM-5PM, Saturday 11AM-5PM, Sunday 11AM-4PM",
-        description = faker.sentences(4)
-    )
-
-    db.session.add(shelter3)
-
-    shelter4 = Shelter(
-        name = "Besty Beasties",
-        address = faker.address(),
-        phone_number = faker.numerify('(###) ### ####'),
-        email = faker.email(),
-        office_hours = "Monday 11AM-4PM, Tuesday 11AM-6:30PM, Wednesday 11AM-5PM, Thursday 11AM-6:30PM, Friday 11AM-5PM, Saturday 11AM-5PM, Sunday 11AM-4PM",
-        description = faker.sentences(4)
-    )
-
-    db.session.add(shelter4)
-
-    shelter5 = Shelter(
-        name = "The Bark Station",
-        address = faker.address(),
-        phone_number = faker.numerify('(###) ### ####'),
-        email = faker.email(),
-        office_hours = "Monday 11AM-4PM, Tuesday 11AM-6:30PM, Wednesday 11AM-5PM, Thursday 11AM-6:30PM, Friday 11AM-5PM, Saturday 11AM-5PM, Sunday 11AM-4PM",
-        description = faker.sentences(4)
-    )
-
-    db.session.add(shelter5)
-
-    shelter6 = Shelter(
-        name = "Maw and Paw",
-        address = faker.address(),
-        phone_number = faker.numerify('(###) ### ####'),
-        email = faker.email(),
-        office_hours = "Monday 11AM-4PM, Tuesday 11AM-6:30PM, Wednesday 11AM-5PM, Thursday 11AM-6:30PM, Friday 11AM-5PM, Saturday 11AM-5PM, Sunday 11AM-4PM",
-        description = faker.sentences(4)
-    )
-
-    db.session.add(shelter6)
-
-
-    shelter7 = Shelter(
-        name = "On the Growl",
-        address = faker.address(),
-        phone_number = faker.numerify('(###) ### ####'),
-        email = faker.email(),
-        office_hours = "Monday 11AM-4PM, Tuesday 11AM-6:30PM, Wednesday 11AM-5PM, Thursday 11AM-6:30PM, Friday 11AM-5PM, Saturday 11AM-5PM, Sunday 11AM-4PM",
-        description = faker.sentences(4)
-    )
-
-    db.session.add(shelter7)
-
-    shelter8 = Shelter(
-        name = "Paws and Pooches",
-        address = faker.address(),
-        phone_number = faker.numerify('(###) ### ####'),
-        email = faker.email(),
-        office_hours = "Monday 11AM-4PM, Tuesday 11AM-6:30PM, Wednesday 11AM-5PM, Thursday 11AM-6:30PM, Friday 11AM-5PM, Saturday 11AM-5PM, Sunday 11AM-4PM",
-        description = faker.sentences(4)
-    )
-
-    db.session.add(shelter8)
-
-    shelter9 = Shelter(
-        name = "Waggamuffins",
-        address = faker.address(),
-        phone_number = faker.numerify('(###) ### ####'),
-        email = faker.email(),
-        office_hours = "Monday 11AM-4PM, Tuesday 11AM-6:30PM, Wednesday 11AM-5PM, Thursday 11AM-6:30PM, Friday 11AM-5PM, Saturday 11AM-5PM, Sunday 11AM-4PM",
-        description = faker.sentences(4)
-    )
-
-    db.session.add(shelter9)
-
-    shelter10 = Shelter(
-        name = "Balls of Fluff",
-        address = faker.address(),
-        phone_number = faker.numerify('(###) ### ####'),
-        email = faker.email(),
-        office_hours = "Monday 11AM-4PM, Tuesday 11AM-6:30PM, Wednesday 11AM-5PM, Thursday 11AM-6:30PM, Friday 11AM-5PM, Saturday 11AM-5PM, Sunday 11AM-4PM",
-        description = faker.sentences(4)
-    )
-
-    db.session.add(shelter10)
-
+    i = 0
+    while i < len(shelterIds) -1:
+        response = requests.get(f'https://api.petfinder.com/v2/organizations/{shelterIds[i]}', auth=BearerAuth('eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJIYWdiU0ZpcWJ6S3lLeHh5dm1OVTlJV1RSVTZTZDBORFo4WmxRU0h1M2lFQlFRbm83WSIsImp0aSI6ImI2NGRkZTM3ZTJiNjZjYjEwNTkwMzgyYjE1NzBhOWIzYmMwZjVhMDNlNzQzMTdiYTNlODU4NDc4MDJiNWIwZDQ2ZDYxZTA2NTgzZDk0NGZkIiwiaWF0IjoxNjIwMjY5MTUyLCJuYmYiOjE2MjAyNjkxNTIsImV4cCI6MTYyMDI3Mjc1Miwic3ViIjoiIiwic2NvcGVzIjpbXX0.MIJTq3EE_B-JPzbpryTMJKJ45RNU6w2TvK_pfdLK1H0NaX6069YCZWbQ4w-fxGfMiqksyNZIMp81TGaTwgZkoddJhHErGgIThvmYPw-1zf_lypFlMDJQ27sJlFYSSi7qTLIiA4TJCbbA06p8yjHnrWUg3Chu7j0xuUArM7rRUsuMNZF6GG1qZQLyM49YBZB8H6T002otwOtMWNQ2SNc9DzSZFMjamBANqi8Z7HvAHZ9UTKBOQIjSNCM7pz7IF-w6Ivppbg71cT5Jg-OMhI5TmJUO34ue3GRCWcIZXTa7hk7qpIORjpVv0ctSgZMnKKmxUxeByqv4Hiw7EfnsV8yVTg')).json()
+        item = response['organization']
+        demo = Shelter(
+            name = item['name'],
+            address = item['address']['city'] + ' ' + item['address']['state'] + ' ' + item['address']['postcode'] + ' ' + item['address']['country'],
+            phone_number = item['phone'],
+            office_hours = '9-5 ' + '9-5 ' + '9-5 ' + '9-5 ' + '9-5 ' + '12-4 ' + '12-4 ',
+            email = item['email'],
+            description = item['mission_statement'],
+            image_url = item['photos'][0]['full'],
+        )
+        db.session.add(demo)
+        i += 1
     db.session.commit()
-
-
+# seed_shelters()
+# print(seed_shelters())
 def undo_shelters():
     db.session.execute('TRUNCATE shelters RESTART IDENTITY CASCADE;')
     db.session.commit()
