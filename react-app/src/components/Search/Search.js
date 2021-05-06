@@ -6,7 +6,7 @@ import './Search.css';
 
 function Search() {
     const dispatch = useDispatch();
-    const history = useHistory();
+    // const history = useHistory();
     const [search, setSearch] = useState('');
 
 
