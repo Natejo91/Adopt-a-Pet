@@ -1,0 +1,22 @@
+.animal-tile {
+    height: 300px;
+    width: 300px;
+    float: left;
+    padding: 20px;
+}
+
+.animal-img {
+    width: 300px;
+    height: 300px;
+}
+
+.animal-name {
+    position: relative;
+    top: 249px;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+}

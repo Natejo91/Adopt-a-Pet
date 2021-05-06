@@ -8,7 +8,7 @@ function SmallAnimalTile({ animal }) {
         <div className='animal-tile' key={`${animal.id}`}>
             <NavLink to={`/animals/${animal.id}`}>
                 <img src={animal.photos[0]?.image_url} alt={"👽"} className='animal-img'/>
-                <div>{`${animal.name}`}</div>
+                <div className='animal-name'>{`${animal.name}`}</div>
             </NavLink>
         </div>
     )
