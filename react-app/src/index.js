@@ -10,6 +10,7 @@ import { authenticate } from './services/auth';
 import configureStore from './store';
 import * as sessionActions from './store/session';
 import * as searchActions from './store/search';
+import * as animalActions from './store/animals';
 
 const store = configureStore();
 
@@ -19,6 +20,7 @@ if (process.env.NODE_ENV !== 'production') {
   window.store = store;
   window.sessionActions = sessionActions;
   window.searchActions = searchActions;
+  window.animalActions = animalActions;
 }
 
 function Root() {

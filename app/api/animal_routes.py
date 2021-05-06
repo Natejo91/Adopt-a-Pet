@@ -5,11 +5,12 @@ from app.models import db, Animal
 animal_routes = Blueprint('animals', __name__)
 
 
-@animal_routes.route('/')
+@animal_routes.route('')
 def get_animals():
     '''
     Get all animals in database
     '''
+    print('--------------------------------')
     animals = Animal.query.all()
     return jsonify([animal.to_dict() for animal in animals])
 
@@ -37,4 +38,4 @@ def remove_animal(id):
     animal = Animal.query.get(id)
     db.session.delete(animal)
     db.session.commit()
-    return jsonify{'Animal has been adopted!'}
+    return 'Animal has been adopted!'

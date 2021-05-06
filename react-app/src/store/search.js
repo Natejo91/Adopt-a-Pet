@@ -12,6 +12,8 @@ export const getSearch = (search) => async dispatch => {
         const search = await response.json();
         dispatch(load(search))
         return search
+    } else {
+        throw Error(response.statusText);
     }
 }
 

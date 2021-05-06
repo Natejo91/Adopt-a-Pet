@@ -20,13 +20,10 @@ export const authenticate = () => async (dispatch) => {
             'Content-Type': 'application/json'
         }
     });
-
-    const data = await response.json();
-    if (data.errors) {
-        return;
+    if (response.ok) {
+        const data = await response.json();
+        dispatch(setUser(data))
     }
-    dispatch(setUser(data))
-
 }
 
 export const login = (email, password) => async (dispatch) => {
@@ -40,12 +37,14 @@ export const login = (email, password) => async (dispatch) => {
             password
         })
     });
-    const data = await response.json();
-    if (data.errors) {
-        return data;
+    if (response.ok) {
+        const data = await response.json();
+        dispatch(setUser(data));
+        return {};
+
+    } else {
+        throw Error(response.statusText);
     }
-    dispatch(setUser(data));
-    return {};
 }
 
 export const logout = () => async (dispatch) => {
@@ -54,8 +53,12 @@ export const logout = () => async (dispatch) => {
             "Content-Type": "application/json",
         }
     });
-    const data = await response.json();
-    dispatch(removeUser());
+    if (response.ok) {
+        const data = await response.json();
+        dispatch(removeUser());
+    } else {
+        throw Error(response.statusText);
+    }
 };
 
 
@@ -78,6 +81,8 @@ export const signUp = (firstname, lastname, email, image, zipcode, password) => 
     if (response.ok) {
         const data = await response.json();
         dispatch(setUser(data));
+    } else {
+        throw Error(response.statusText);
     }
 }
 

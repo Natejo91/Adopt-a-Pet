@@ -2,11 +2,13 @@ import {createStore, combineReducers, applyMiddleware, compose } from "redux";
 import thunk from 'redux-thunk';
 import session from './session'
 import search from './search';
+import animals from './animals';
 
 
 const rootReducer = combineReducers({
     session,
-    search
+    search,
+    animals
 });
 
 let enhancer;
