@@ -112,7 +112,7 @@ def seed_animals():
 
     #51434757
     animal9 = Animal(
-        type='Dag',
+        type='Dog',
         name='King',
         age='Young',
         gender='Male',
@@ -125,7 +125,7 @@ def seed_animals():
 
     #51303715
     animal10 = Animal(
-        type='Dag',
+        type='Dog',
         name='Cherokke Rose',
         age='Adult',
         gender='Female',
@@ -138,7 +138,7 @@ def seed_animals():
 
     #51277191
     animal11 = Animal(
-        type='Dag',
+        type='Dog',
         name='Monster Truck',
         age='Adult',
         gender='Male',
@@ -151,7 +151,7 @@ def seed_animals():
 
     #51176135
     animal12 = Animal(
-        type='Dag',
+        type='Dog',
         name='William',
         age='Senior',
         gender='Male',
@@ -164,7 +164,7 @@ def seed_animals():
 
     #51256521
     animal13 = Animal(
-        type='Dag',
+        type='Dog',
         name='Diesel',
         age='Adult',
         gender='Male',
@@ -177,7 +177,7 @@ def seed_animals():
 
     #51158287
     animal14 = Animal(
-        type='Dag',
+        type='Dog',
         name='Duke',
         age='Adult',
         gender='Male',
@@ -192,7 +192,7 @@ def seed_animals():
     #animals from shelter OH401
     #49974858
     animal15 = Animal(
-        type='Dag',
+        type='Dog',
         name='Hobo',
         age='Senior',
         gender='Male',
@@ -205,7 +205,7 @@ def seed_animals():
 
     #45278151
     animal16 = Animal(
-        type='Dag',
+        type='Dog',
         name='2 Chocolate Labs',
         age='Adult',
         gender='Male',
@@ -218,7 +218,7 @@ def seed_animals():
 
      #45278170
     animal17 = Animal(
-        type='Dag',
+        type='Dog',
         name='2 Yellow Labs',
         age='Adult',
         gender='Female',
@@ -231,7 +231,7 @@ def seed_animals():
 
     #45278177
     animal18 = Animal(
-        type='Dag',
+        type='Dog',
         name='Josie',
         age='Adult',
         gender='Female',
