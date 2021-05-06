@@ -58,11 +58,11 @@ def update_user():
     form['csrf_token'].data = request.cookies['csrf_token']
     if form.validate_on_submit():
         user = User(
-            first_name = form.data['first_name']
-            last_name = form.data['last_name']
-            zipcode = form.data['zipcode']
-            email = form.data['email']
-            password = form.data['password']
+            first_name = form.data['first_name'],
+            last_name = form.data['last_name'],
+            zipcode = form.data['zipcode'],
+            email = form.data['email'],
+            password = form.data['password'],
             image_url = url
         )
         db.session.add(user)
@@ -85,7 +85,7 @@ def delete_user():
     user = User.query.get(userId)
     db.session.delete(user)
     db.session.commit()
-    return {'message': Your account has been deleted!}
+    return {'message': 'Your account has been deleted!'}
 
 
 
