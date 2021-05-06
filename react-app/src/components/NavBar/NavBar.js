@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import LogoutButton from '../auth/LogoutButton/LogoutButton';
 import LoginFormModal from '../auth/LoginFormModal';
 import SignUpFormModal from '../auth/SignUpFormModal';
+import Search from '../Search/Search';
 import './NavBar.css';
 
 const NavBar = () => {
@@ -27,13 +28,15 @@ const NavBar = () => {
           }
         </div>
         <div>
-
           <NavLink to="/users" exact={true} activeClassName="active">
             Users
           </NavLink>
         </div>
         <div>
           <LogoutButton />
+        </div>
+        <div>
+          <Search />
         </div>
       </div>
     </nav>
