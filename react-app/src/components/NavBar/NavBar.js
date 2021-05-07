@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import LogoutButton from '../auth/LogoutButton/LogoutButton';
 import LoginFormModal from '../auth/LoginFormModal';
 import SignUpFormModal from '../auth/SignUpFormModal';
+import HomePage from '../HomePage/HomePage';
 import Search from '../Search/Search';
 import './NavBar.css';
 
@@ -14,7 +15,7 @@ const NavBar = () => {
       <div className="navbar-container">
         <div>
           <NavLink to="/" exact={true} activeClassName="active">
-            Adopt-A-Pet
+            Adopt-a-Pet
           </NavLink>
         </div>
         <div>

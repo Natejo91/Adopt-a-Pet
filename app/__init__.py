@@ -10,6 +10,7 @@ from .api.user_routes import user_routes
 from .api.auth_routes import auth_routes
 from .api.search_routes import search_routes
 from .api.animal_routes import animal_routes
+from .api.shelter_routes import shelter_routes
 
 from .seeds import seed_commands
 
@@ -35,6 +36,7 @@ app.register_blueprint(user_routes, url_prefix='/api/users')
 app.register_blueprint(auth_routes, url_prefix='/api/auth')
 app.register_blueprint(search_routes, url_prefix='/api/search')
 app.register_blueprint(animal_routes, url_prefix='/api/animals')
+app.register_blueprint(shelter_routes, url_prefix='/api/shelters')
 db.init_app(app)
 Migrate(app, db)
 

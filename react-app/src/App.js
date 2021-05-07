@@ -8,6 +8,7 @@ import ProtectedRoute from "./components/auth/ProtectedRoute";
 import UsersList from "./components/UsersList/UsersList";
 import User from "./components/User/User";
 import HomePage from "./components/HomePage/HomePage";
+import AnimalPage from "./components/AnimalPage/AnimalPage";
 // import { authenticate } from "./services/auth";
 import { authenticate } from "./store/session";
 
@@ -45,6 +46,9 @@ function App() {
         </ProtectedRoute>
         <Route path="/" exact={true}>
           <HomePage />
+        </Route>
+        <Route path="/animals/:id" exact={true}>
+          <AnimalPage />
         </Route>
       </Switch>
     </>

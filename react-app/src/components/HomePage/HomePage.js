@@ -1,6 +1,7 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { getAnimals } from '../../store/animals';
+import { getShelters } from '../../store/shelters';
 import AnimalTileContainer from '../AnimalTileContainer/AnimalTileContainer';
 import AdoptAPet from '../../public/images/Adopt-A-Pet.png'
 import './HomePage.css';
@@ -10,28 +11,33 @@ import './HomePage.css';
 function HomePage(){
     const dispatch = useDispatch();
     const user = useSelector(state => state.session.user);
+    const animals = useSelector(state => state.animals?.animals);
+    const [loaded, setLoaded] = useState(false);
 
     useEffect(() => {
         if (user) {
             dispatch(getAnimals())
+            dispatch(getShelters())
+            setLoaded(true)
         } else {
             dispatch(getAnimals())
+            dispatch(getShelters())
+            setLoaded(true)
         }
-    }, [dispatch, user])
+    }, [dispatch])
 
-    const animals = useSelector(state => state.animals)
 
     if (!animals) return null
 
 
-
+    if (!loaded) return null
     return (
         <>
             <div>
                 <img src={AdoptAPet} id='banner'/>
             </div>
             <div className='animals-container'>
-                <AnimalTileContainer />
+                <AnimalTileContainer loaded={loaded}/>
             </div>
         </>
     )
