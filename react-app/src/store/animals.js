@@ -1,9 +1,10 @@
-const GET_ANIMALS = 'animal/GET_ANIMALS';
+const GET_ANIMALS = 'animal/GET_ALL_ANIMALS';
 
 const load = animals => ({
     type: GET_ANIMALS,
     payload: animals
 })
+
 
 export const getAnimals = () => async dispatch => {
     const response = await fetch('/api/animals');
@@ -12,10 +13,19 @@ export const getAnimals = () => async dispatch => {
         const animals = await response.json();
         dispatch(load(animals))
         return animals
-    } else {
-        // throw Error(response.statusText);
     }
 }
+
+export const getOneAnimal = (animalId) => async dispatch => {
+    const response = await fetch(`/api/animals${animalId}`)
+
+    if (response.ok) {
+        const animal = await response.json();
+        dispatch(load(animal))
+        return animal
+    }
+}
+
 
 const initialState = []
 
