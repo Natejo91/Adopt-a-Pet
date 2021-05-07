@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { getAnimals } from '../../store/animals';
 import AnimalTileContainer from '../AnimalTileContainer/AnimalTileContainer';
+import AdoptAPet from '../../public/images/Adopt-A-Pet.png'
 import './HomePage.css';
 
 
@@ -26,8 +27,8 @@ function HomePage(){
 
     return (
         <>
-            <div className="banner">
-
+            <div>
+                <img src={AdoptAPet} id='banner'/>
             </div>
             <div className='animals-container'>
                 <AnimalTileContainer />
