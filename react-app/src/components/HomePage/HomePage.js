@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { getAnimals } from '../../store/animals';
 import { getShelters } from '../../store/shelters';
+import { removeBreeds } from '../../store/breeds';
 import AnimalTileContainer from '../AnimalTileContainer/AnimalTileContainer';
 import AdoptAPet from '../../public/images/Adopt-A-Pet.png'
 import './HomePage.css';
@@ -18,10 +19,12 @@ function HomePage(){
         if (user) {
             dispatch(getAnimals())
             dispatch(getShelters())
+            dispatch(removeBreeds())
             setLoaded(true)
         } else {
             dispatch(getAnimals())
             dispatch(getShelters())
+            dispatch(removeBreeds())
             setLoaded(true)
         }
     }, [dispatch])

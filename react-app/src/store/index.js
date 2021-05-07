@@ -4,13 +4,15 @@ import session from './session'
 import search from './search';
 import animals from './animals';
 import shelters from './shelters';
+import breeds from './breeds';
 
 
 const rootReducer = combineReducers({
     session,
     search,
     animals,
-    shelters
+    shelters,
+    breeds
 });
 
 let enhancer;

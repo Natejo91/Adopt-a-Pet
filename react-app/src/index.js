@@ -11,6 +11,7 @@ import configureStore from './store';
 import * as sessionActions from './store/session';
 import * as searchActions from './store/search';
 import * as animalActions from './store/animals';
+import * as breedActions from './store/breeds';
 
 const store = configureStore();
 
@@ -21,6 +22,7 @@ if (process.env.NODE_ENV !== 'production') {
   window.sessionActions = sessionActions;
   window.searchActions = searchActions;
   window.animalActions = animalActions;
+  window.breedActions = breedActions;
 }
 
 function Root() {
