@@ -12,7 +12,7 @@ function AnimalPage() {
     const { id } = useParams();
 
     const animalId = id
-    console.log(animalId)
+
     useEffect(() => {
         dispatch(getOneAnimal(animalId))
     }, [dispatch])
@@ -21,9 +21,6 @@ function AnimalPage() {
     const shelter = useSelector(state => state.animals.shelter)
 
     if (!animal) return null
-
-    console.log(animal[0])
-    console.log(shelter[0])
 
 
     return (

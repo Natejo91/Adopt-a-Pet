@@ -9,8 +9,6 @@ function AnimalTileContainer({ loaded }) {
     const state = useSelector(state => state.animals)
     const animals = state.animals
 
-    console.log(animals)
-
 
     return (
         <div className='animal-tile-container'>
