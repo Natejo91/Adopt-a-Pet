@@ -11,10 +11,10 @@ const NavBar = () => {
   const user = useSelector(state => state.session?.user)
   return (
     <nav>
-      <div>
+      <div className="navbar-container">
         <div>
           <NavLink to="/" exact={true} activeClassName="active">
-            Home
+            Adopt-A-Pet
           </NavLink>
         </div>
         <div>
