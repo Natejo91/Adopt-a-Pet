@@ -1,5 +1,5 @@
 from flask import Blueprint, jsonify
-from app.models import db, Animal
+from app.models import db, Animal, Shelter
 
 
 animal_routes = Blueprint('animals', __name__)
@@ -10,18 +10,24 @@ def get_animals():
     '''
     Get all animals in database
     '''
-    print('--------------------------------')
     animals = Animal.query.all()
     return jsonify([animal.to_dict() for animal in animals])
 
 
-@animal_routes.route('/<int:id>', methods=['POST'])
+@animal_routes.route('/<int:id>')
 def get_animal(id):
     '''
     Get a specific animal from the database
     '''
     animal = Animal.query.get(id)
-    return animal.to_dict()
+
+    shelter = Shelter.query.get(animal.shelter_id)
+
+    result = {}
+    result["animal"] = [animal.to_dict()]
+    result["shelter"] = [shelter.to_dict()]
+    return result
+
 
 #NEED TO RESEARCH ABOUT POST FOR SHELTER ROUTE
 # @animal_routes.route('/<int:id>')

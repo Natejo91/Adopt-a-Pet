@@ -3,12 +3,14 @@ import thunk from 'redux-thunk';
 import session from './session'
 import search from './search';
 import animals from './animals';
+import shelters from './shelters';
 
 
 const rootReducer = combineReducers({
     session,
     search,
-    animals
+    animals,
+    shelters
 });
 
 let enhancer;

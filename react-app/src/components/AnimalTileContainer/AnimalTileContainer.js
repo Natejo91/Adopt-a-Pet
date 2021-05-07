@@ -4,10 +4,12 @@ import SmallAnimalTile from '../SmallAnimalTile/SmallAnimalTile';
 import './AnimalTileContainer.css';
 
 
-function AnimalTileContainer() {
-    const animals = useSelector(state => state.animals)
+function AnimalTileContainer({ loaded }) {
+    console.log(loaded, '---------------')
+    const state = useSelector(state => state.animals)
+    const animals = state.animals
 
-    if (!animals) return null;
+    console.log(animals)
 
 
     return (

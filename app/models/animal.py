@@ -24,7 +24,7 @@ class Animal(db.Model):
             "breed_id": self.breed_id,
             "description": self.description,
             "shelter_id": self.shelter_id,
-            "photos": [photo.to_dict() for photo in self.photos]
+            "photos": [photo.to_dict() for photo in self.photos],
         }
 
     photos = db.relationship("Photo", back_populates="animals", cascade="all, delete")
