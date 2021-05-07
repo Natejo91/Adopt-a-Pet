@@ -8,11 +8,11 @@ def seed_animals():
     #51438327
     animal1 = Animal(
         type='Dog',
-        name='Benji',
-        age='Senior',
-        gender='Male',
+        name='Charlotte',
+        age='Young',
+        gender='Female',
         breed_id=168,
-        description='Benji is a sweet gent who charms everyone he meets. His former owner gave him up reluctantly, after 11 years, because of her own illness. She described him as a wonderful companion and said, I love him with all my heart. People at the shelter describe Benji as gentle and friendly. He came to DFL with severe dental problems, which have been addressed, and has a medical issue that will need to be explored by your own vet',
+        description='Charlotte was picked up as a stray and taken to a nearby shelter. She was stuck there for weeks until we busted her out. She is so lovable and very active! Charlotte loves the lake, hikes, and any reason to throw a harness on and go for an adventure. Charlotte loves kids but can be bossy with other dogs so we suggest no dogs or a submissive dog. Charlotte is very confident and knows what she wants. Charlotte would do better in a home with no cats. Charlotte loves kids but due to her still learning not to jump we recommend older kids.',
         shelter_id=1
     )
 

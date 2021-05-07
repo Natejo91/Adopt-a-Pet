@@ -12,8 +12,8 @@
 
 .animal-name {
     position: relative;
-    top: 249px;
     background-color: white;
+    bottom: 34px;
     display: flex;
     flex-direction: row;
     justify-content: center;
