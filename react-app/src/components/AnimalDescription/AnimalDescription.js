@@ -38,6 +38,20 @@ function AnimalDescription({ animal, shelter }) {
                     </div>
                 </div>
             )}
+            {breed.name && (
+                <div className="breed-container">
+                    <div className="breed-image-container">
+                        <img src={breed.image_url} className="breed-img"/>
+                    </div>
+                    <div className="breed-name">
+                        <h1>{breed.name}</h1>
+                    </div>
+                    <div className="breed-description">
+                        Traits you can find in the  the {breed.name} include <br></br> <strong>{breed.description}</strong>.
+                    </div>
+
+                </div>
+            )}
         </>
     )
 }
