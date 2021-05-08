@@ -40,17 +40,28 @@ shelterIds = [
 def seed_shelters():
     i = 0
     while i < len(shelterIds) -1:
-        response = requests.get(f'https://api.petfinder.com/v2/organizations/{shelterIds[i]}', auth=BearerAuth('eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJIYWdiU0ZpcWJ6S3lLeHh5dm1OVTlJV1RSVTZTZDBORFo4WmxRU0h1M2lFQlFRbm83WSIsImp0aSI6IjU1NTllOWRkN2M4Y2U1YjlkZWM0OTJiMDQyZTY1YzgyNWEwYjAxMzY4YjYxOTg5Njk3ZDNjZmM4OGIyNjliOTA0NDg3YWE2ZTA2NmYwMzgzIiwiaWF0IjoxNjIwMzYyNTEzLCJuYmYiOjE2MjAzNjI1MTMsImV4cCI6MTYyMDM2NjExMywic3ViIjoiIiwic2NvcGVzIjpbXX0.moIYrkH5ixzjGz3gPxUvZ4hc1aECpCbrr5YNiuRtNqSE2-wgIHhYwHqTnhm4AgveBCW2IxAvSlHQFJf_wMvguJamXIatQP3z0mUhwfqheetQUorvuh6f2GlN9nlrhOfkLKbLHlZq542Ux-PCX2G910Nzj-w4St_gqALUtf43Hp6Qe5il7pOfxqs8dIMpaEtJCAZBwhLDW5KIYPnkGhgPUAODpHb4f-5sBGy_7uvlGxhmeClCS_EgBVVpVzGeBAoHFZwwypCFw_uL9K1Y79NlT01NiYuf-SKqLrGPuJy7qu9tY8sYyDMH9UdYypqhxRkmgP5n2tDIwNYFmkmlDcD1Yg')).json()
+        response = requests.get(f'https://api.petfinder.com/v2/organizations/{shelterIds[i]}', auth=BearerAuth('eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJIYWdiU0ZpcWJ6S3lLeHh5dm1OVTlJV1RSVTZTZDBORFo4WmxRU0h1M2lFQlFRbm83WSIsImp0aSI6ImM4OWJmYTVkZmQ2ZDRhZDc2OWZmYmFiYmVmZmIzN2U4ZTQyZmE5OGNkODQzM2RhMTdjYWE4MGQ0MmM2ZjViNmZjYmNkNjc0N2ZiZmVlNjExIiwiaWF0IjoxNjIwNDk4MzMzLCJuYmYiOjE2MjA0OTgzMzMsImV4cCI6MTYyMDUwMTkzMywic3ViIjoiIiwic2NvcGVzIjpbXX0.Yx31q7C7WwF8ZzdK88z1RHGXjMkqSV77a-MB41lrVhf5RNW88LtdZwpt9cNOSqI99VijdTkmueQKwqLC0FzyYpFwqHod3gzM3Wg2J8oGKIWC7KoYkiMzer59E9YQKGpQZ5lmr1g42Mn8CNR0r8VuC7JRSCLPcd3QnwPKqy2wAYFZ6CFVqTNXEUnRyUj1i1dxpKWiaoCn9_f9izX56YHBmuxSKm6AjM5WvkdxY29hb8qLhTG17jDmZLnbVlpzOqcfqqVkZZwx-6NOiqy7qUg0e7GJ6p_Z6krLcga_fFmpp14hfRVX5JEpzcWxk27RzSOUbJ1lvNxgMg7ubEw__kvykg')).json()
         item = response['organization']
-        demo = Shelter(
-            name = item['name'],
-            address = item['address']['city'] + ' ' + item['address']['state'] + ' ' + item['address']['postcode'] + ' ' + item['address']['country'],
-            phone_number = item['phone'],
-            office_hours = '9-5 ' + '9-5 ' + '9-5 ' + '9-5 ' + '9-5 ' + '12-4 ' + '12-4 ',
-            email = item['email'],
-            description = item['mission_statement'],
-            image_url = item['photos'][0]['full'],
-        )
+        if item['address']['address1']:
+            demo = Shelter(
+                name = item['name'],
+                address = item['address']['address1'] + ' ' + item['address']['city'] + ' ' + item['address']['state'] + ' ' + item['address']['postcode'] + ' ' + item['address']['country'],
+                phone_number = item['phone'],
+                office_hours = '9-5 ' + '9-5 ' + '9-5 ' + '9-5 ' + '9-5 ' + '12-4 ' + '12-4 ',
+                email = item['email'],
+                description = item['mission_statement'],
+                image_url = item['photos'][0]['full'],
+            )
+        else:
+             demo = Shelter(
+                name = item['name'],
+                address = item['address']['city'] + ' ' + item['address']['state'] + ' ' + item['address']['postcode'] + ' ' + item['address']['country'],
+                phone_number = item['phone'],
+                office_hours = '9-5 ' + '9-5 ' + '9-5 ' + '9-5 ' + '9-5 ' + '12-4 ' + '12-4 ',
+                email = item['email'],
+                description = item['mission_statement'],
+                image_url = item['photos'][0]['full'],
+            )
         db.session.add(demo)
         i += 1
     db.session.commit()
