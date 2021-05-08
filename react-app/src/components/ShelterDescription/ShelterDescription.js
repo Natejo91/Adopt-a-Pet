@@ -30,7 +30,7 @@ function ShelterDescription({ shelter }) {
                             {shelter.address}
                         </div>
                         <div className="shelter-email">
-                            <Link className="mailtoui" to={`mailto:${shelter.email}`}>{shelter.email}</Link>
+                            {/* <Link className="mailto" to={`mailto:${shelter.email}`}>{shelter.email}</Link> */}
                         </div>
                         <div className="shelter-phone">
                             {shelter.phone_number}
