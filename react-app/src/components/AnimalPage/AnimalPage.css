@@ -1,0 +1,11 @@
+.animal-image {
+    width: 500px;
+    max-height: 600px;
+}
+
+.animal-image-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+    background-color: #458459;
+}

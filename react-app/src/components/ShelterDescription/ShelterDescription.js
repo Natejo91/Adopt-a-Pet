@@ -5,10 +5,6 @@ import './ShelterDescription.css';
 
 
 function ShelterDescription({ shelter }) {
-    const location = shelter.address
-    const array = location.split(' ')
-    const newArray = array.slice(0, 2)
-    const cityState = newArray.join(', ')
 
     if (!shelter) return null;
 
@@ -20,7 +16,6 @@ function ShelterDescription({ shelter }) {
                         <img src={shelter.image_url} alt={"👽"} className="shelter-icon"/>
                     </div>
                     <div className="shelter-description">
-                        {cityState}
                         <div>
                             -------GOOGLE MAP COMPONENT HERE---------
                         </div>
@@ -30,7 +25,7 @@ function ShelterDescription({ shelter }) {
                             {shelter.address}
                         </div>
                         <div className="shelter-email">
-                            {/* <Link className="mailto" to={`mailto:${shelter.email}`}>{shelter.email}</Link> */}
+                            {shelter.email}
                         </div>
                         <div className="shelter-phone">
                             {shelter.phone_number}

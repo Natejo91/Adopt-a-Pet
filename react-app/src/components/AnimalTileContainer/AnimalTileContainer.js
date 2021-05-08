@@ -13,7 +13,7 @@ function AnimalTileContainer({ loaded }) {
     return (
         <div className='animal-tile-container'>
             <div className='animal-list'>
-                {animals.slice(0,10).map((animal, i) => (
+                {animals.slice(5, 15).map((animal, i) => (
                     <SmallAnimalTile animal={animal} key={i} />
                 ))}
             </div>

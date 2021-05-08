@@ -7,10 +7,6 @@ import './AnimalDescription.css';
 
 function AnimalDescription({ animal, shelter }) {
     const dispatch = useDispatch();
-    const location = shelter.address
-    const array = location.split(' ')
-    const newArray = array.slice(0, 2)
-    const cityState = newArray.join(', ')
     const breed = useSelector(state => state.breeds?.breed)
 
     useEffect(() => {
@@ -25,7 +21,7 @@ function AnimalDescription({ animal, shelter }) {
                 <div className="animal-container">
                     <h1>{animal.name}</h1>
                     <div>
-                        {breed.name} | {cityState}
+                        {breed.name}
                     </div>
                     <div className="border-line"></div>
                     <div className="type-age-gender">
