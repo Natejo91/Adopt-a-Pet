@@ -1,9 +1,58 @@
 .animal-container {
     background-color: white;
     box-shadow:  rgb(0 0 0 / 30%) 0px 19px 38px, rgb(0 0 0 / 22%) 0px 15px 12px;
-    max-width: 40%;
+    max-width: 30%;
+    height: fit-content;
     border-radius: 10px;
     position: relative;
     left: 10%;
-    padding: 40px;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.animal-description {
+    padding-top: 10px;
+}
+
+.type-age-gender {
+    padding-top: 20px;
+}
+
+.border-line {
+    border: 1px solid rgb(228, 228, 228);
+}
+
+.breed-img {
+    max-width: 40%;
+    max-height: 40%;
+}
+
+.breed-container {
+    background-color: white;
+    box-shadow:  rgb(0 0 0 / 30%) 0px 19px 38px, rgb(0 0 0 / 22%) 0px 15px 12px;
+    max-width: 30%;
+    height: fit-content;
+    border-radius: 10px;
+    margin-top: 20px;
+    position: relative;
+    left: 10%;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.breed-name {
+    position: relative;
+    border-bottom: 2px solid rgb(228, 228, 228);
+}
+
+.breed-description {
+    position: relative;
+    top: 10px;
+}
+
+.breed-image-container {
+    display: flex;
+    justify-content: center;
 }
