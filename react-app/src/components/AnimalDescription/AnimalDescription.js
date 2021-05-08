@@ -15,7 +15,7 @@ function AnimalDescription({ animal, shelter }) {
 
     useEffect(() => {
         dispatch(getBreed(animal.breed_id))
-    }, [dispatch])
+    }, [dispatch, animal.breed_id])
 
     if (!breed) return null
 
@@ -41,7 +41,7 @@ function AnimalDescription({ animal, shelter }) {
             {breed.name && (
                 <div className="breed-container">
                     <div className="breed-image-container">
-                        <img src={breed.image_url} className="breed-img"/>
+                        <img src={breed.image_url} alt={"👽"} className="breed-img"/>
                     </div>
                     <div className="breed-name">
                         <h1>{breed.name}</h1>

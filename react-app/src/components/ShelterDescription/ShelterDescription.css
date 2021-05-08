@@ -1,0 +1,32 @@
+.shelter-container {
+    /* position: relative;
+    left: 65%;*/
+    float: right;
+    position: relative;
+    right: 18%;
+}
+
+.shelter-icon {
+    width: 400px;
+}
+
+
+/* .shelter-img {
+} */
+
+.shelter-description {
+    background-color: white;
+}
+
+.location-icon {
+    max-height: 45px;
+    max-width: 45px;
+}
+
+.shelter-address {
+    border-bottom: 2px solid rgb(228, 228, 228);
+}
+
+.shelter-email {
+    border-bottom: 2px solid rgb(228, 228, 228);
+}
