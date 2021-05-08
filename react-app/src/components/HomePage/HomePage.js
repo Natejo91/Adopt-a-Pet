@@ -27,7 +27,7 @@ function HomePage(){
             dispatch(removeBreeds())
             setLoaded(true)
         }
-    }, [dispatch])
+    }, [dispatch, user])
 
 
     if (!animals) return null
@@ -37,7 +37,7 @@ function HomePage(){
     return (
         <>
             <div>
-                <img src={AdoptAPet} id='banner'/>
+                <img src={AdoptAPet} id='banner' alt={"👽"}/>
             </div>
             <div className='animals-container'>
                 <AnimalTileContainer loaded={loaded}/>
