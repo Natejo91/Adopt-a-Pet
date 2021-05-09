@@ -10,6 +10,8 @@ import User from "./components/User/User";
 import HomePage from "./components/HomePage/HomePage";
 import AnimalPage from "./components/AnimalPage/AnimalPage";
 import SearchResultPage from "./components/SearchResultPage/SearchResultPage";
+import Footer from "./components/Footer/Footer";
+
 // import { authenticate } from "./services/auth";
 import { authenticate } from "./store/session";
 
@@ -55,6 +57,7 @@ function App() {
           <SearchResultPage />
         </Route>
       </Switch>
+      <Footer />
     </>
   );
 }

@@ -1,0 +1,22 @@
+.footer-container {
+    background-color: #458459;
+    display: flex;
+    justify-content: space-around;
+    color: #f5f5ef;
+    height: 200px;
+    align-items: center;
+    padding-left: 40px;
+    padding-right: 40px;
+    min-height: calc(100% - 200px);
+    margin-top: auto;
+    flex: 0 0 50px;
+    width: 100%;
+}
+
+.copyright {
+    display: flex;
+    justify-content: center;
+    background-color: #316140;
+    color: #f5f5ef;
+    width: 100%;
+}
