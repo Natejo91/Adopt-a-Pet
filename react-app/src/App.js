@@ -9,6 +9,7 @@ import UsersList from "./components/UsersList/UsersList";
 import User from "./components/User/User";
 import HomePage from "./components/HomePage/HomePage";
 import AnimalPage from "./components/AnimalPage/AnimalPage";
+import SearchResultPage from "./components/SearchResultPage/SearchResultPage";
 // import { authenticate } from "./services/auth";
 import { authenticate } from "./store/session";
 
@@ -49,6 +50,9 @@ function App() {
         </Route>
         <Route path="/animals/:id" exact={true}>
           <AnimalPage />
+        </Route>
+        <Route path="/search" exact={true}>
+          <SearchResultPage />
         </Route>
       </Switch>
     </>
