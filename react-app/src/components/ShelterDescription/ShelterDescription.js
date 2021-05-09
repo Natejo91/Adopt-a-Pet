@@ -1,14 +1,14 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import mapLocation from '../../public/images/location.png';
+import MapContainer from '../MapContainer/MapContainer';
+import phoneIcon from '../../public/images/phone.png';
+import emailIcon from '../../public/images/email.png';
 import './ShelterDescription.css';
 
 
+
 function ShelterDescription({ shelter }) {
-    const location = shelter.address
-    const array = location.split(' ')
-    const newArray = array.slice(0, 2)
-    const cityState = newArray.join(', ')
+
 
     if (!shelter) return null;
 
@@ -20,19 +20,20 @@ function ShelterDescription({ shelter }) {
                         <img src={shelter.image_url} alt={"👽"} className="shelter-icon"/>
                     </div>
                     <div className="shelter-description">
-                        {cityState}
                         <div>
-                            -------GOOGLE MAP COMPONENT HERE---------
+                            <MapContainer shelter={shelter}/>
                         </div>
                         <img src={mapLocation} className="location-icon" alt={"👽"}/>
-                        Location Address
                         <div className="shelter-address">
+
                             {shelter.address}
                         </div>
                         <div className="shelter-email">
-                            {/* <Link className="mailto" to={`mailto:${shelter.email}`}>{shelter.email}</Link> */}
+                            <img src={emailIcon} className="email-icon" alt={"👽"}/>
+                            {shelter.email}
                         </div>
                         <div className="shelter-phone">
+                            <img src={phoneIcon} className="phone-icon" alt={"👽"}/>
                             {shelter.phone_number}
                         </div>
 
