@@ -5,7 +5,7 @@ import { getBreed } from '../../store/breeds';
 import './AnimalDescription.css';
 
 
-function AnimalDescription({ animal, shelter }) {
+function AnimalDescription({ animal}) {
     const dispatch = useDispatch();
     const breed = useSelector(state => state.breeds?.breed)
 

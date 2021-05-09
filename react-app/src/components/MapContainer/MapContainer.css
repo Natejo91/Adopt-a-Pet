@@ -1,0 +1,11 @@
+.map-window {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+}
+
+#map-image {
+    width: 50%;
+    height: 50%;
+    border: 5px solid black;
+}
