@@ -1,32 +1,91 @@
 .shelter-container {
-    /* position: relative;
-    left: 65%;*/
-    float: right;
     position: relative;
-    right: 18%;
+    /* left: 65%; */
+    float: right;
+    right: 15%;
 }
 
 .shelter-icon {
+    position: relative;
+    top: 4px;
     width: 400px;
+    box-shadow:  rgb(0 0 0 / 30%) 0px 19px 38px, rgb(0 0 0 / 22%) 0px 15px 12px;
+    border-radius: 10px;
 }
 
 
-/* .shelter-img {
-} */
+.shelter-img {
+    position: relative;
+}
 
 .shelter-description {
     background-color: white;
+    box-shadow:  rgb(0 0 0 / 30%) 0px 19px 38px, rgb(0 0 0 / 22%) 0px 15px 12px;
+    width: 100%;
+    position: relative;
+    height: fit-content;
+    border-radius: 10px;
 }
 
 .location-icon {
-    max-height: 45px;
-    max-width: 45px;
+    max-height: 35px;
+    max-width: 35px;
+    position: relative;
+    left: 25px;
+    top: 20px;
 }
 
 .shelter-address {
     border-bottom: 2px solid rgb(228, 228, 228);
+    display: flex;
+    height: 50px;
+    align-items: flex-end;
+    width: 345px;
+    position: relative;
+    left: 30px;
+    padding-bottom: 10px;
 }
 
 .shelter-email {
+    display: flex;
+    align-items: center;
     border-bottom: 2px solid rgb(228, 228, 228);
+    height: 30px;
+    position: relative;
+    width: 350px;
+    left: 25px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.shelter-phone {
+    height: 40px;
+    position: relative;
+    left: 25px;
+    padding-bottom: 10px;
+}
+
+.phone-icon {
+    max-height: 35px;
+    max-width: 35px;
+    position: relative;
+    top: 10px;
+}
+
+.email-icon {
+    max-height: 35px;
+    max-width: 35px;
+}
+
+.address-icon {
+    max-height: 35px;
+    max-width: 35px;
+}
+
+.google-map {
+    width: 40%;
+    height: 20%;
+    position: relative;
+    left: 53.5%;
+    top: 560px;
 }

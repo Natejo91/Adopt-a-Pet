@@ -16,7 +16,7 @@ function AnimalDescription({ animal, shelter }) {
     if (!breed) return null
 
     return (
-        <>
+        <div className="animal-breed-container">
             {breed.name && (
                 <div className="animal-container">
                     <h1>{animal.name}</h1>
@@ -48,7 +48,7 @@ function AnimalDescription({ animal, shelter }) {
 
                 </div>
             )}
-        </>
+        </div>
     )
 }
 

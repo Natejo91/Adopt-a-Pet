@@ -24,23 +24,25 @@ function AnimalPage() {
     if (!animal) return null
     if (!shelter) return null
 
+    let sessionLink;
     if (animal[0].photos[1]) {
-        var sessionLink = <img className="animal-image" src={animal[0].photos[1]['image_url']}/>
+        sessionLink = <img className="animal-image" src={animal[0].photos[1]['image_url']} alt={"👽"}/>
     } else {
-        var sessionLink = <div></div>
+        sessionLink = <div></div>
     }
 
+    let sessionLink2;
     if (animal[0].photos[2]) {
-        var sessionLink2 = <img className="animal-image" src={animal[0].photos[2]['image_url']}/>
+        sessionLink2 = <img className="animal-image" src={animal[0].photos[2]['image_url']} alt={"👽"}/>
     } else {
-        var sessionLink2 = <div></div>
+        sessionLink2 = <div></div>
     }
 
     //need to implement carousel here for animals with multiple photos
     return (
         <>
             <div className="animal-image-container">
-                <img className="animal-image" src={animal[0].photos[0]['image_url']} />
+                <img className="animal-image" src={animal[0].photos[0]['image_url']} alt={"👽"}/>
                 {sessionLink}
                 {sessionLink2}
             </div>
