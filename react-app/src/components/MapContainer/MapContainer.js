@@ -118,7 +118,6 @@ const MapContainer = ({ shelter }) => {
     ]
 
     const ApiKey = process.env.REACT_APP_GOOGLE_API_KEY;
-    console.log(process.env.REACT_APP_GOOGLE_API_KEY);
 
 
     const location = locations.filter(location => {
@@ -127,6 +126,7 @@ const MapContainer = ({ shelter }) => {
         }
         return location.location
     })
+
 
     const defaultCenter = location[0].location
 
