@@ -6,6 +6,8 @@ import LoginFormModal from '../auth/LoginFormModal';
 import SignUpFormModal from '../auth/SignUpFormModal';
 import Search from '../Search/Search';
 import './NavBar.css';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHome } from '@fortawesome/free-solid-svg-icons';
 
 const NavBar = () => {
   const user = useSelector(state => state.session?.user)
@@ -13,8 +15,8 @@ const NavBar = () => {
     <nav>
       <div className="navbar-container">
         <div>
-          <NavLink to="/" exact={true} activeClassName="active">
-            Adopt-a-Pet
+          <NavLink to="/" exact={true} activeClassName="active" >
+            <FontAwesomeIcon icon={faHome} />
           </NavLink>
         </div>
         <div>
