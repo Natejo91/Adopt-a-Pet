@@ -1,9 +1,16 @@
 import React from 'react';
-import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
+import { GoogleMap, LoadScript, Marker, InfoWindow } from '@react-google-maps/api';
+import { useState } from 'react';
 
 
 
 const MapContainer = ({ shelter }) => {
+    const [selected, setSelected] = useState({});
+
+    const onSelect = item => {
+        setSelected(item);
+    }
+
     const mapStyles = {
         height: "33vh",
         width: "100%",
@@ -127,13 +134,29 @@ const MapContainer = ({ shelter }) => {
         return location.location
     })
 
-
+    console.log(selected)
     const defaultCenter = location[0].location
+    console.log(defaultCenter)
 
     return (
         <LoadScript googleMapsApiKey={ApiKey}>
-            <GoogleMap mapContainerStyle={mapStyles} zoom={13} center={defaultCenter}>
-                <Marker key={shelter.name} position={defaultCenter} />
+            <GoogleMap mapContainerStyle={mapStyles} zoom={12} center={defaultCenter}>
+                <Marker key={shelter.name} position={defaultCenter} onClick={() => onSelect(shelter)} />
+                {selected.name && (
+                    <InfoWindow
+                    position={defaultCenter}
+                    clickable={true}
+                    onCloseClick={() => setSelected({})}
+                    >
+                        <div className="map-window">
+                            <div>
+                                <a href={`/shelter/${selected.id}`}>{selected.name}</a>
+                                <div>{selected.address}</div>
+                            </div>
+                        </div>
+                    </InfoWindow>
+                    )
+                }
             </GoogleMap>
         </LoadScript>
     )
