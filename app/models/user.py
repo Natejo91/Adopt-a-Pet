@@ -40,3 +40,4 @@ class User(db.Model, UserMixin):
     }
 
     favorite_animals = db.relationship("Favorite_Animal", back_populates="users", cascade="all, delete")
+    adoptions = db.relationship("Adoption", back_populates="users", cascade="all, delete")

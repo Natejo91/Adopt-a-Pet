@@ -8,20 +8,24 @@ function FavoritesPage() {
     const dispatch = useDispatch();
     const favorites = useSelector(state => state.favorites?.favorites)
 
-    useEffect(() => {
-        dispatch(getUserFavorites())
-    }, [dispatch])
-
+    // useEffect(() => {
+    //     dispatch(getUserFavorites())
+    // }, [dispatch])
 
     return (
-        <div className='favorite-tile-container'>
-            <div className='favorite-list'>
-                {favorites?.map((favorite, i ) => (
-                    <SmallAnimalTile animal={favorite} key={i}/>
-                ))}
+        <>
+            <div>
+                <h1>Your Current Favorites</h1>
             </div>
+            <div className='favorite-tile-container'>
+                <div className='favorite-list'>
+                    {favorites?.map((favorite, i ) => (
+                        <SmallAnimalTile animal={favorite} key={i}/>
+                    ))}
+                </div>
 
-        </div>
+            </div>
+        </>
     )
 }
 

@@ -58,9 +58,19 @@ def upgrade():
         sa.Column('gender', sa.String(6), nullable=False),
         sa.Column('breed_id', sa.Integer(), nullable=False),
         sa.Column('description', sa.String(2000), nullable=False),
-        sa.Column('shelter_id', sa.Integer(), nullable=False)
+        sa.Column('shelter_id', sa.Integer(), nullable=False),
         sa.ForeignKeyConstraint(['breed_id'], ['breeds.id'], ),
         sa.ForeignKeyConstraint(['shelter_id'], ['shelters.id'], ),
+        sa.PrimaryKeyConstraint('id')
+    )
+
+    op.create_table('adoptions',
+        sa.Column('id', sa.Integer(), nullable=False),
+        sa.Column('user_id', sa.Integer(), nullable=False),
+        sa.Column('animal_id', sa.Integer(), nullalbe=False),
+        sa.Column('message', sa.String(2000), nullable=False),
+        sa.ForeignKeyConstraint(['user_id'], ['users.id'], ),
+        sa.ForeignKeyConstraint(['animal_id'], ['animals.id'], ),
         sa.PrimaryKeyConstraint('id')
     )
 
