@@ -134,9 +134,7 @@ const MapContainer = ({ shelter }) => {
         return location.location
     })
 
-    console.log(selected)
     const defaultCenter = location[0].location
-    console.log(defaultCenter)
 
     return (
         <LoadScript googleMapsApiKey={ApiKey}>

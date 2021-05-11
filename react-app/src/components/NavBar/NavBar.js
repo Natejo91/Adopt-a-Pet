@@ -17,7 +17,7 @@ const NavBar = () => {
       <div className="navbar-container">
         <div>
           <NavLink to="/" exact={true} activeClassName="active" >
-            <FontAwesomeIcon icon={faHome} />
+            <FontAwesomeIcon icon={faHome} size="2x"/>
           </NavLink>
         </div>
         <div>

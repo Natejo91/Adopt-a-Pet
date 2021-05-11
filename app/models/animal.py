@@ -31,3 +31,4 @@ class Animal(db.Model):
     breeds = db.relationship("Breed", back_populates="animals", cascade="all, delete")
     shelters = db.relationship("Shelter", back_populates="animals", cascade="all, delete")
     favorite_animals = db.relationship("Favorite_Animal", back_populates="animals", cascade="all, delete")
+    adoptions = db.relationship("Adoption", back_populates="animals", cascade="all, delete")

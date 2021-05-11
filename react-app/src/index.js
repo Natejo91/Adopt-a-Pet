@@ -12,6 +12,7 @@ import * as sessionActions from './store/session';
 import * as searchActions from './store/search';
 import * as animalActions from './store/animals';
 import * as breedActions from './store/breeds';
+import * as adoptionActions from './store/adoptions';
 
 const store = configureStore();
 
@@ -23,6 +24,8 @@ if (process.env.NODE_ENV !== 'production') {
   window.searchActions = searchActions;
   window.animalActions = animalActions;
   window.breedActions = breedActions;
+  window.adoptionActions = adoptionActions;
+
 }
 
 function Root() {

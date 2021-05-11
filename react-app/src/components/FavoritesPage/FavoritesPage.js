@@ -12,16 +12,20 @@ function FavoritesPage() {
         dispatch(getUserFavorites())
     }, [dispatch])
 
-
     return (
-        <div className='favorite-tile-container'>
-            <div className='favorite-list'>
-                {favorites?.map((favorite, i ) => (
-                    <SmallAnimalTile animal={favorite} key={i}/>
-                ))}
+        <>
+            <div>
+                <h1>Your Favorite Animals!</h1>
             </div>
+            <div className='favorite-tile-container'>
+                <div className='favorite-list'>
+                    {favorites?.map((favorite, i ) => (
+                        <SmallAnimalTile animal={favorite} key={i}/>
+                    ))}
+                </div>
 
-        </div>
+            </div>
+        </>
     )
 }
 
