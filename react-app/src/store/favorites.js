@@ -1,6 +1,5 @@
 import { addFavorite, removeFavorite } from '../store/session';
 const GET_FAVORITES = 'favorite/GET_FAVORITES';
-const GET_ONE_FAV = 'favorite/GET_ONE_FAV';
 
 
 const loadAll = favorites => ({
@@ -8,10 +7,6 @@ const loadAll = favorites => ({
     payload: favorites
 })
 
-const loadOne = favorite => ({
-    type: GET_ONE_FAV,
-    payload: favorite
-})
 
 export const getUserFavorites = () => async dispatch => {
     const response = await fetch(`/api/favorites`);

@@ -23,9 +23,18 @@
     border-radius: 27%;
 }
 
-.favorite-button {
+.heart-button {
     z-index: 100;
     position: relative;
-    right: 52px;
+    right: 60px;
+    top: 275px;
     height: 50px;
+}
+
+
+.heart-filled {
+    position: relative;
+    z-index: 101;
+    right: 60px;
+    top: 275px;
 }

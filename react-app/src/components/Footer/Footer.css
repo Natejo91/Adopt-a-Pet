@@ -7,10 +7,11 @@
     align-items: center;
     padding-left: 40px;
     padding-right: 40px;
-    min-height: calc(100% - 200px);
-    margin-top: auto;
     flex: 0 0 50px;
-    width: 100%;
+    position: absolute;
+    bottom: 50px;;
+    left: 0;
+    right: 0;
 }
 
 .copyright {
@@ -19,4 +20,8 @@
     background-color: #316140;
     color: #f5f5ef;
     width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }

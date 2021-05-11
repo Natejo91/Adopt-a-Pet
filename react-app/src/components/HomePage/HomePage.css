@@ -4,12 +4,16 @@
     display: inline-block;
     flex-direction: row;
     flex-wrap: wrap;
-    margin-left: 90px;
-    margin-bottom: 100px;
+    margin-bottom: 300px;
     margin-top: 50px;
 }
 
 #banner {
     width: 100%;
     height: 490px;
+}
+
+.animal-tiles {
+    position: relative;
+    margin-left: 100px;
 }

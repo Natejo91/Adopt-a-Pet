@@ -38,14 +38,14 @@ function HomePage(){
 
     if (!loaded) return null
     return (
-        <>
+        <div className="animal-tiles">
             <div>
                 <img src={AdoptAPet} id='banner' alt={"👽"}/>
             </div>
             <div className='animals-container'>
                 <AnimalTileContainer />
             </div>
-        </>
+        </div>
     )
 }
 
