@@ -15,7 +15,7 @@ function FavoritesPage() {
     return (
         <>
             <div>
-                <h1>Your Current Favorites</h1>
+                <h1>Your Favorite Animals!</h1>
             </div>
             <div className='favorite-tile-container'>
                 <div className='favorite-list'>
