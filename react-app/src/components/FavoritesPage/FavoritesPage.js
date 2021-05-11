@@ -8,9 +8,9 @@ function FavoritesPage() {
     const dispatch = useDispatch();
     const favorites = useSelector(state => state.favorites?.favorites)
 
-    // useEffect(() => {
-    //     dispatch(getUserFavorites())
-    // }, [dispatch])
+    useEffect(() => {
+        dispatch(getUserFavorites())
+    }, [dispatch])
 
     return (
         <>

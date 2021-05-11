@@ -52,6 +52,12 @@ function AnimalPage() {
             {user &&
                 <div className="adoption-container">
                     <h1>Ask about {animal[0].name}!</h1>
+                    <div className="user-info">
+                        <p><strong>From</strong> <br/>
+                            {user.first_name} {user.last_name} <br/>
+                            {user.email}
+                        </p>
+                    </div>
                     <AdoptionForm animal={animal} />
                 </div>
             }
