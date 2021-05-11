@@ -11,6 +11,7 @@ import { faHome } from '@fortawesome/free-solid-svg-icons';
 
 const NavBar = () => {
   const user = useSelector(state => state.session?.user)
+
   return (
     <nav>
       <div className="navbar-container">
@@ -27,6 +28,13 @@ const NavBar = () => {
         <div>
           {!user &&
             <SignUpFormModal />
+          }
+        </div>
+        <div>
+          {user &&
+            <NavLink to="/favorites" activeClassName="active">
+              Favorites
+            </NavLink>
           }
         </div>
         <div>

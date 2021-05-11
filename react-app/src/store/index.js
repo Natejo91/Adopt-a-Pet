@@ -5,6 +5,7 @@ import search from './search';
 import animals from './animals';
 import shelters from './shelters';
 import breeds from './breeds';
+import favorites from './favorites';
 
 
 const rootReducer = combineReducers({
@@ -12,7 +13,8 @@ const rootReducer = combineReducers({
     search,
     animals,
     shelters,
-    breeds
+    breeds,
+    favorites
 });
 
 let enhancer;

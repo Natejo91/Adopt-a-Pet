@@ -1,8 +1,18 @@
 /* TODO Add site wide styles */
-html, body {
+html {
+    background-color: #f5f5ef;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    min-width: 100%;
+    position: relative;
     margin: 0;
     padding: 0;
-    background-color: #f5f5ef;
+}
+
+body {
+    margin: 0;
+    padding: 0;
 }
 
 a:-webkit-any-link {

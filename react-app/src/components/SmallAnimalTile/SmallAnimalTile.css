@@ -3,6 +3,7 @@
     width: 300px;
     float: left;
     padding: 20px;
+    display: flex;
 }
 
 .animal-img {
@@ -20,4 +21,20 @@
     align-items: center;
     height: 45px;
     border-radius: 27%;
+}
+
+.heart-button {
+    z-index: 100;
+    position: relative;
+    right: 60px;
+    top: 275px;
+    height: 50px;
+}
+
+
+.heart-filled {
+    position: relative;
+    z-index: 101;
+    right: 60px;
+    top: 275px;
 }

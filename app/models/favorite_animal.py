@@ -14,8 +14,6 @@ class Favorite_Animal(db.Model):
             "id": self.id,
             "user_id": self.user_id,
             "animal_id": self.animal_id,
-            #may have to do if self.animal_id is animal['id']
-            "favorite_animal": [animal.to_dict() for animal in self.animals if self.animal_id in animal]
         }
 
     users = db.relationship("User", back_populates="favorite_animals")
