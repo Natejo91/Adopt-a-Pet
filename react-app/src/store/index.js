@@ -6,6 +6,7 @@ import animals from './animals';
 import shelters from './shelters';
 import breeds from './breeds';
 import favorites from './favorites';
+import adoptions from './adoptions';
 
 
 const rootReducer = combineReducers({
@@ -14,7 +15,8 @@ const rootReducer = combineReducers({
     animals,
     shelters,
     breeds,
-    favorites
+    favorites,
+    adoptions
 });
 
 let enhancer;

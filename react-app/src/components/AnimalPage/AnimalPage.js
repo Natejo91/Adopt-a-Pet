@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import { getOneAnimal } from '../../store/animals';
 import AnimalDescription from '../AnimalDescription/AnimalDescription';
 import ShelterDescription from '../ShelterDescription/ShelterDescription';
-
+import AdoptionForm from '../AdoptionForm/AdoptionForm';
 import './AnimalPage.css';
 
 
@@ -18,6 +18,7 @@ function AnimalPage() {
         dispatch(getOneAnimal(animalId))
     }, [dispatch, animalId])
 
+    const user = useSelector(state => state.session.user)
     const animal = useSelector(state => state.animals.animal)
     const shelter = useSelector(state => state.animals.shelter)
 
@@ -48,6 +49,12 @@ function AnimalPage() {
             </div>
             <ShelterDescription shelter={shelter[0]}/>
             <AnimalDescription animal={animal[0]} shelter={shelter[0]}/>
+            {user &&
+                <div className="adoption-container">
+                    <h1>Ask about {animal[0].name}!</h1>
+                    <AdoptionForm animal={animal} />
+                </div>
+            }
         </>
     )
 }
