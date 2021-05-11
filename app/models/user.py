@@ -35,7 +35,8 @@ class User(db.Model, UserMixin):
             "last_name": self.last_name,
             "email": self.email,
             "zipcode": self.zipcode,
-            "image_url": self.image_url
+            "image_url": self.image_url,
+            "favorite_animals": {favorite_animal.animal_id: favorite_animal.animal_id for favorite_animal in self.favorite_animals}
     }
 
     favorite_animals = db.relationship("Favorite_Animal", back_populates="users", cascade="all, delete")

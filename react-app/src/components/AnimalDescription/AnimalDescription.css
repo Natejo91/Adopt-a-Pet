@@ -41,6 +41,7 @@
     padding: 50px;
     display: flex;
     flex-direction: column;
+    margin-bottom: 50px;
 }
 
 .breed-name {

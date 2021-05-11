@@ -1,6 +1,9 @@
 // constants
 const SET_USER = "session/SET_USER";
 const REMOVE_USER = "session/REMOVE_USER";
+const ADD_FAVORITE = "session/ADD_FAVORITE";
+const REMOVE_FAVORITE = "session/REMOVE_FAVORITE";
+
 
 const setUser = (user) => ({
     type: SET_USER,
@@ -11,6 +14,15 @@ const removeUser = () => ({
     type: REMOVE_USER
 })
 
+export const addFavorite = (animalId) => ({
+    type: ADD_FAVORITE,
+    payload: animalId
+})
+
+export const removeFavorite = (animalId) => ({
+    type: REMOVE_FAVORITE,
+    payload: animalId
+})
 
 
 // thunks
@@ -98,6 +110,12 @@ export default function reducer(state = initialState, action) {
             return { user: action.payload };
         case REMOVE_USER:
             return { user: null };
+        case ADD_FAVORITE:
+            state.user.favorite_animals[action.payload] = action.payload
+            return { ...state }
+        case REMOVE_FAVORITE:
+            delete state.user.favorite_animals[action.payload]
+            return { ...state }
         default:
             return state;
     }

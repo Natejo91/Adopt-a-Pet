@@ -1,6 +1,6 @@
-from flask import Blueprint, jsonify
+from flask import Blueprint, jsonify, request
 from flask_login import login_required, current_user, login_user
-from app.models import User, Favorite_Animal
+from app.models import db, User, Favorite_Animal, Animal
 from app.forms import SignUpForm
 
 user_routes = Blueprint('users', __name__)
@@ -82,7 +82,7 @@ def update_user():
     return {'errors': validation_errors_to_error_messages(form.errors)}, 401
 
 
-@user_routes.route('<int:id>', methods=['DELETE'])
+@user_routes.route('/<int:id>', methods=['DELETE'])
 @login_required
 def delete_user():
     '''
@@ -96,35 +96,3 @@ def delete_user():
     db.session.delete(user)
     db.session.commit()
     return {'message': 'Your account has been deleted!'}
-
-
-
-@user_routes.route('<int:id>/favorites')
-def get_Favorites(id):
-    '''
-    Return a users favorite pets
-    '''
-    favorites = Favorite_Animal.query.filter_by(user_=id).all()
-    fav_list = [favorite.to_dict() for favorite in favorites]
-
-    return jsonify(fav_list)
-
-
-@user_routes.route('<int:id>/favorites', methods=['POST'])
-def post_favorite_animal(id, fav_id):
-    new_favorite_animal = Favorite_Animal(
-        user_id = id,
-        animal_id = fav_id
-    )
-
-    db.session.add(new_favorite_animal)
-    db.session.commit()
-    return jsonify(new_favorite_animal.to_dict())
-
-
-@user_routes.route('<int:id>/favorites/<int:fav_id>', methods=['DELETE'])
-def delete_favorite_animal(id, fav_id):
-    favorite_animal = Favorite_Animal.query.filter_by(user_id=id, animal_id=fav_id).first()
-    db.session.delete(favorite_animal)
-    db.session.commit()
-    return jsonify(favorite_animal.to_dict())
