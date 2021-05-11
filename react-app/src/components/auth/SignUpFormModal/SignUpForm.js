@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from 'react-router-dom';
 import { signUp } from '../../../store/session';
-import './SingUpForm.css';
+import './SignUpForm.css';
 
 const SignUpForm = () => {
   const dispatch = useDispatch();
@@ -12,7 +12,7 @@ const SignUpForm = () => {
   const [lastname, setLastname] = useState("");
   const [email, setEmail] = useState("");
   const [errors, setErrors]  = useState([]);
-  const [zipcode, setZipcode] = useState(1);
+  const [zipcode, setZipcode] = useState(11111);
   const [password, setPassword] = useState("");
   const [repeatPassword, setRepeatPassword] = useState("");
 
@@ -64,79 +64,82 @@ const SignUpForm = () => {
   }
 
   return (
-    <form onSubmit={onSignUp}>
-      <div>
-        {errors.map((error) => (
-          <div>{error}</div>
-        ))}
-      </div>
-      <div>
-        <label>First Name</label>
-        <input
-          type="text"
-          name="first_name"
-          onChange={updateFirstname}
-          value={firstname}
-        ></input>
-      </div>
-      <div>
-        <label>Last Name</label>
-        <input
-          type="text"
-          name="last_name"
-          onChange={updateLastname}
-          value={lastname}
-        ></input>
-      </div>
-      <div>
-        <label>Email</label>
-        <input
-          type="text"
-          name="email"
-          onChange={updateEmail}
-          value={email}
-        ></input>
-      </div>
-      <div>
-        <label>Zipcode</label>
-        <input
-          type="number"
-          name="zipcode"
-          onChange={updateZipcode}
-          value={zipcode}
-        ></input>
-      </div>
-      <div>
-        <label>Password</label>
-        <input
-          type="password"
-          name="password"
-          onChange={updatePassword}
-          value={password}
-        ></input>
-      </div>
-      <div>
-        <label>Confirm Password</label>
-        <input
-          type="password"
-          name="repeat_password"
-          onChange={updateRepeatPassword}
-          value={repeatPassword}
-          required={true}
-        ></input>
-      </div>
-      <div>
-        <label>Photo Url</label>
-        <input
-          type="file"
-          accept="image/*"
-          onChange={updateImage}
-        ></input>
-      </div>
-      <div className="button-div">
-        <button type="submit">Sign Up</button>
-      </div>
-    </form>
+    <div className="signup-container">
+      <h1 className="singup">Sign Up</h1>
+      <form onSubmit={onSignUp}>
+        <div>
+          {errors.map((error) => (
+            <div>{error}</div>
+          ))}
+        </div>
+        <div>
+          <label>First Name</label>
+          <input
+            type="text"
+            name="first_name"
+            onChange={updateFirstname}
+            value={firstname}
+          ></input>
+        </div>
+        <div>
+          <label>Last Name</label>
+          <input
+            type="text"
+            name="last_name"
+            onChange={updateLastname}
+            value={lastname}
+          ></input>
+        </div>
+        <div>
+          <label>Email</label>
+          <input
+            type="text"
+            name="email"
+            onChange={updateEmail}
+            value={email}
+          ></input>
+        </div>
+        <div>
+          <label>Zipcode</label>
+          <input
+            type="number"
+            name="zipcode"
+            onChange={updateZipcode}
+            value={zipcode}
+          ></input>
+        </div>
+        <div>
+          <label>Password</label>
+          <input
+            type="password"
+            name="password"
+            onChange={updatePassword}
+            value={password}
+          ></input>
+        </div>
+        <div>
+          <label>Confirm Password</label>
+          <input
+            type="password"
+            name="repeat_password"
+            onChange={updateRepeatPassword}
+            value={repeatPassword}
+            required={true}
+          ></input>
+        </div>
+        <div>
+          <label>Photo Url</label>
+          <input
+            type="file"
+            accept="image/*"
+            onChange={updateImage}
+          ></input>
+        </div>
+        <div className="signup-button">
+          <button type="submit">Sign Up</button>
+        </div>
+      </form>
+    </div>
   );
 };
 

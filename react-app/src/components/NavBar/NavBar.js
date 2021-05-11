@@ -7,7 +7,7 @@ import SignUpFormModal from '../auth/SignUpFormModal';
 import Search from '../Search/Search';
 import './NavBar.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHome } from '@fortawesome/free-solid-svg-icons';
+import { faDog, faPaw, faHome } from '@fortawesome/free-solid-svg-icons';
 
 const NavBar = () => {
   const user = useSelector(state => state.session?.user)
@@ -15,9 +15,9 @@ const NavBar = () => {
   return (
     <nav>
       <div className="navbar-container">
-        <div>
+        <div className="home-icon">
           <NavLink to="/" exact={true} activeClassName="active" >
-            <FontAwesomeIcon icon={faHome} size="2x"/>
+            <FontAwesomeIcon icon={faHome} size="4x"/>
           </NavLink>
         </div>
         <div>
@@ -30,20 +30,20 @@ const NavBar = () => {
             <SignUpFormModal />
           }
         </div>
-        <div>
+        <div className="favorite-icon">
           {user &&
             <NavLink to="/favorites" activeClassName="active">
-              Favorites
+              <FontAwesomeIcon icon={faPaw} size="4x"/>
             </NavLink>
           }
         </div>
-        <div>
+        {/* <div>
           <NavLink to="/users" exact={true} activeClassName="active">
             Users
           </NavLink>
-        </div>
+        </div> */}
         <div>
-          <LogoutButton />
+            <LogoutButton />
         </div>
         <div>
           <Search />

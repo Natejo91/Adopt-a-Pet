@@ -2,7 +2,16 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    height: 50px;
+    height: 70px;
     background-color: #c6ae6d;
+}
 
+.home-icon {
+    position: relative;
+    left: 150px;
+}
+
+.favorite-icon {
+    position: relative;
+    right: 150px;
 }
