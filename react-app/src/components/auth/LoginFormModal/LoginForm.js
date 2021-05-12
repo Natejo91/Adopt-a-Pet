@@ -37,7 +37,8 @@ const LoginForm = () => {
   }
 
   return (
-    <>
+    <div className="login-container">
+      <h1>Log In</h1>
       <form onSubmit={onLogin}>
         <div>
           {errors.map((error) => (
@@ -65,10 +66,12 @@ const LoginForm = () => {
             onChange={updatePassword}
             required
           />
+        </div>
+        <div className="login-button">
           <button type="submit">Login</button>
         </div>
       </form>
-    </>
+    </div>
   );
 };
 
