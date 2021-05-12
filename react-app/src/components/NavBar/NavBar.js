@@ -12,6 +12,8 @@ import { faDog, faPaw, faHome } from '@fortawesome/free-solid-svg-icons';
 const NavBar = () => {
   const user = useSelector(state => state.session?.user)
 
+
+
   return (
     <nav>
       <div className="navbar-container">

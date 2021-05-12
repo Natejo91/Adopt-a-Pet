@@ -10,7 +10,8 @@ def seed_users():
         last_name='lition',
         zipcode='46410',
         email='demo@aa.io',
-        password='password'
+        password='password',
+        image_url=None
     )
 
     db.session.add(demo)
@@ -20,7 +21,8 @@ def seed_users():
         last_name='Robinson',
         zipcode='80011',
         email='james@gmail.com',
-        password='password'
+        password='password',
+        image_url=None
     )
 
     db.session.add(user1)
@@ -30,7 +32,8 @@ def seed_users():
         last_name='Landon',
         zipcode='29601',
         email='maria@gmail.com',
-        password='password'
+        password='password',
+        image_url=None
     )
 
     db.session.add(user2)
@@ -40,7 +43,8 @@ def seed_users():
         last_name='Jones',
         zipcode='90001',
         email='daniel@gmail.com',
-        password='password'
+        password='password',
+        image_url=None
     )
 
     db.session.add(user3)
@@ -50,7 +54,8 @@ def seed_users():
         last_name='Williams',
         zipcode='90045',
         email='ashley@gmail.com',
-        password='password'
+        password='password',
+        image_url=None
     )
 
     db.session.add(user4)
@@ -60,7 +65,8 @@ def seed_users():
         last_name='Jackson',
         zipcode='10025',
         email='andrew@gmail.com',
-        password='password'
+        password='password',
+        image_url=None
     )
 
     db.session.add(user5)

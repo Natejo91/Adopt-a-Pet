@@ -40,6 +40,7 @@ shelterIds = [
 def seed_shelters():
     i = 0
     while i < len(shelterIds) -1:
+
         response = requests.get(f'https://api.petfinder.com/v2/organizations/{shelterIds[i]}', auth=BearerAuth('eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJIYWdiU0ZpcWJ6S3lLeHh5dm1OVTlJV1RSVTZTZDBORFo4WmxRU0h1M2lFQlFRbm83WSIsImp0aSI6ImVhMzRlMTRjNTNjOGYzOWEwZDFhYmE0ODY5MDQ0NDMyMTBjMzEwNzQ3ZTc4NTg5MTUxMjQzNjMyMjA3MmYwYzg2MTRjNTZmZTkyZWI4OTI5IiwiaWF0IjoxNjIwODQwOTM4LCJuYmYiOjE2MjA4NDA5MzgsImV4cCI6MTYyMDg0NDUzOCwic3ViIjoiIiwic2NvcGVzIjpbXX0.OSEUye7KofUgHt7_9do9l33e4huVUeSa0vQPofyqIVJU4zUuOlWZ5ZU2HM0DTwFxYYvSjaVoR3LPKLGvLWAucpRMlwULvru-IU6ijraE3D_tIOiSpQFeXjm-OQK7YIDp8gMQxTXrVaa81SxGZ39EKXLFxciDlem5u-nDgFSyzYKkjcwHGv7teEiCbHdJiamq54XAHn3c1kT9R5RPRsRdBKcgXxJgRMwHxRfnwM62aXPYxTMuW-LVuGg1mmR0LbxNoRPP-FyDKHHbWeDoT2YX92h4y1UWkbaRQBLJETq1uYTZ14TznOu76yiF1f_CgTxXyoShO5PK8vs01Sfo6grMxw')).json()
         item = response['organization']
         if item['address']['address1']:
