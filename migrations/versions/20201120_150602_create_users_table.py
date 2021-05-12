@@ -25,7 +25,7 @@ def upgrade():
         sa.Column('email', sa.String(length=255), nullable=False),
         sa.Column('zipcode', sa.Integer(), nullable=False),
         sa.Column('hashed_password', sa.String(length=255), nullable=False),
-        sa.Column('image_url', sa.String(length=2000),
+        sa.Column('image_url', sa.String(length=2000)),
         sa.PrimaryKeyConstraint('id'),
         sa.UniqueConstraint('email')
     )
@@ -67,7 +67,7 @@ def upgrade():
     op.create_table('adoptions',
         sa.Column('id', sa.Integer(), nullable=False),
         sa.Column('user_id', sa.Integer(), nullable=False),
-        sa.Column('animal_id', sa.Integer(), nullalbe=False),
+        sa.Column('animal_id', sa.Integer(), nullable=False),
         sa.Column('message', sa.String(2000), nullable=False),
         sa.ForeignKeyConstraint(['user_id'], ['users.id'], ),
         sa.ForeignKeyConstraint(['animal_id'], ['animals.id'], ),
