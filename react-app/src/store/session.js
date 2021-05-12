@@ -52,10 +52,9 @@ export const login = (email, password) => async (dispatch) => {
     if (response.ok) {
         const data = await response.json();
         dispatch(setUser(data));
-        return {};
-
+        return data;
     } else {
-        throw Error(response.statusText);
+        // throw Error(response.statusText);
     }
 }
 
@@ -68,6 +67,7 @@ export const logout = () => async (dispatch) => {
     if (response.ok) {
         const data = await response.json();
         dispatch(removeUser());
+
     } else {
         throw Error(response.statusText);
     }

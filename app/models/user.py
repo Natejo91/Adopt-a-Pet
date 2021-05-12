@@ -13,6 +13,8 @@ class User(db.Model, UserMixin):
     hashed_password = db.Column(db.String(255), nullable = False)
     image_url = db.Column(db.String(2000))
 
+    favorite_animals = db.relationship("Favorite_Animal", back_populates="users", cascade="all, delete")
+    adoptions = db.relationship("Adoption", back_populates="users", cascade="all, delete")
 
     @property
     def password(self):
@@ -38,6 +40,3 @@ class User(db.Model, UserMixin):
             "image_url": self.image_url,
             "favorite_animals": {favorite_animal.animal_id: favorite_animal.animal_id for favorite_animal in self.favorite_animals}
     }
-
-    favorite_animals = db.relationship("Favorite_Animal", back_populates="users", cascade="all, delete")
-    adoptions = db.relationship("Adoption", back_populates="users", cascade="all, delete")
