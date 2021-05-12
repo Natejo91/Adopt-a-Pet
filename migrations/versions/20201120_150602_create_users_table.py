@@ -67,7 +67,7 @@ def upgrade():
     op.create_table('adoptions',
         sa.Column('id', sa.Integer(), nullable=False),
         sa.Column('user_id', sa.Integer(), nullable=False),
-        sa.Column('animal_id', sa.Integer(), nullalbe=False),
+        sa.Column('animal_id', sa.Integer(), nullable=False),
         sa.Column('message', sa.String(2000), nullable=False),
         sa.ForeignKeyConstraint(['user_id'], ['users.id'], ),
         sa.ForeignKeyConstraint(['animal_id'], ['animals.id'], ),
