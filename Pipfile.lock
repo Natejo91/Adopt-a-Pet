@@ -103,13 +103,6 @@
             "index": "pypi",
             "version": "==3.0.8"
         },
-        "flask-db": {
-            "hashes": [
-                "sha256:f69496e50af5d771cf544ff6b4521e6e05c4a15e511b8e5a3a5b221cc72b88eb"
-            ],
-            "index": "pypi",
-            "version": "==0.3.1"
-        },
         "flask-jwt-extended": {
             "hashes": [
                 "sha256:0aa8ee6fa7eb3be9314e39dd199ac8e19389a95371f9d54e155c7aa635e319dd"
