@@ -23,10 +23,11 @@ function Search() {
                     value={search}
                     placeholder='Search...'
                     onChange={(e) => setSearch(e.target.value)}
+                    className="search-input"
                 />
-                <button onClick={(e) => handleSearch(e)} type="submit">
-                    Search
-                </button>
+                <div>
+                    <button onClick={(e) => handleSearch(e)} type="submit">Search</button>
+                </div>
             </form>
         </div>
     )
