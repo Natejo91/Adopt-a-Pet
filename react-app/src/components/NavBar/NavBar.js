@@ -19,15 +19,15 @@ const NavBar = () => {
       <div className="navbar-container">
         <div className="home-icon">
           <NavLink to="/" exact={true} activeClassName="active" >
-            <FontAwesomeIcon icon={faHome} size="4x"/>
+            <FontAwesomeIcon icon={faHome} size="4x" color="white"/>
           </NavLink>
         </div>
-        <div>
+        <div className="login-button">
           {!user &&
             <LoginFormModal />
           }
         </div>
-        <div>
+        <div className="signup-button">
           {!user &&
             <SignUpFormModal />
           }
@@ -35,7 +35,7 @@ const NavBar = () => {
         <div className="favorite-icon">
           {user &&
             <NavLink to="/favorites" activeClassName="active">
-              <FontAwesomeIcon icon={faPaw} size="4x"/>
+              <FontAwesomeIcon icon={faPaw} size="4x" color="white"/>
             </NavLink>
           }
         </div>
@@ -44,10 +44,12 @@ const NavBar = () => {
             Users
           </NavLink>
         </div> */}
-        <div>
-            <LogoutButton />
-        </div>
-        <div>
+        {user &&
+          <div className="logout-button">
+              <LogoutButton />
+          </div>
+        }
+        <div className="search-bar">
           <Search />
         </div>
       </div>

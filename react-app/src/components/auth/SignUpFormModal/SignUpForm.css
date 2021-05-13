@@ -3,9 +3,3 @@
     flex-direction: column;
     align-items: center;
 }
-
-.signup-button {
-    position: relative;
-    left: 120px;
-    padding-top: 20px;
-}
