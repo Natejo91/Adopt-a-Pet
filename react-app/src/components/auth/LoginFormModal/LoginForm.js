@@ -10,20 +10,19 @@ const LoginForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const user = useSelector(state => state.session?.user);
+  const demoEmail = 'demo@aa.io';
+  const demoPassword = 'password';
 
-  const background = document.querySelector('#modal-background');
-
-
-  const onLogin = async (e) => {
+  const onLogin = (e) => {
     e.preventDefault();
-    const data = await dispatch(login(email, password));
-    console.log(data)
-    // if (data.errors) {
-    //   setErrors(data.errors);
-    // } else {
-    //   background.click();
-    // }
+    dispatch(login(email, password));
+
   };
+
+  const handleDemoLogin = (e) => {
+    e.preventDefault();
+    dispatch(login(demoEmail, demoPassword))
+  }
 
   const updateEmail = (e) => {
     setEmail(e.target.value);
@@ -73,6 +72,9 @@ const LoginForm = () => {
         <div>
           <button className="login-btn" type="submit">Login</button>
         </div>
+      </form>
+      <form onSubmit={handleDemoLogin}>
+        <button className="demo-btn" type="submit">Demo User</button>
       </form>
     </div>
   );
