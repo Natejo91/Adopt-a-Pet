@@ -72,54 +72,60 @@ const SignUpForm = () => {
             <div>{error}</div>
           ))}
         </div>
-        <div>
-          <label>First Name</label>
+        <div className="firstname-container">
+          <label className="firstname-label">First Name</label>
           <input
+            className="firstname-input"
             type="text"
             name="first_name"
             onChange={updateFirstname}
             value={firstname}
           ></input>
         </div>
-        <div>
-          <label>Last Name</label>
+        <div className="lastname-container">
+          <label className="lastname-label">Last Name</label>
           <input
+            className="lastname-input"
             type="text"
             name="last_name"
             onChange={updateLastname}
             value={lastname}
           ></input>
         </div>
-        <div>
-          <label>Email</label>
+        <div className="email-container">
+          <label className="email-label">Email</label>
           <input
+            className="email-input"
             type="text"
             name="email"
             onChange={updateEmail}
             value={email}
           ></input>
         </div>
-        <div>
-          <label>Zipcode</label>
+        <div className="zipcode-container">
+          <label className="zipcode-label">Zipcode</label>
           <input
+            className="zipcode-input"
             type="number"
             name="zipcode"
             onChange={updateZipcode}
             value={zipcode}
           ></input>
         </div>
-        <div>
-          <label>Password</label>
+        <div className="password-container">
+          <label className="password-label">Password</label>
           <input
+            className="password-input"
             type="password"
             name="password"
             onChange={updatePassword}
             value={password}
           ></input>
         </div>
-        <div>
-          <label>Confirm Password</label>
+        <div className="confirm-container">
+          <label className="confirm-label">Confirm<br/><span className="span-password">Password</span></label>
           <input
+            className="confirm-input"
             type="password"
             name="repeat_password"
             onChange={updateRepeatPassword}
@@ -127,16 +133,17 @@ const SignUpForm = () => {
             required={true}
           ></input>
         </div>
-        <div>
-          <label>Photo Url</label>
+        <div className="photo-container">
+          <label className="photo-label">Photo Url</label>
           <input
+            className="photo-input"
             type="file"
             accept="image/*"
             onChange={updateImage}
           ></input>
         </div>
-        <div className="signup-button">
-          <button type="submit">Sign Up</button>
+        <div id="signup-button">
+          <button className="signup-btn" type="submit">Sign Up</button>
         </div>
       </form>
     </div>
