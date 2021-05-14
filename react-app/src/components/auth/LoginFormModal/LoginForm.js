@@ -46,9 +46,10 @@ const LoginForm = () => {
             <div>{error}</div>
           ))}
         </div>
-        <div>
-          <label htmlFor="email">Email</label>
+        <div className="email-container">
+          <label className="email-label" htmlFor="email">Email</label>
           <input
+            className="email-input"
             name="email"
             type="text"
             placeholder="Email"
@@ -57,9 +58,10 @@ const LoginForm = () => {
             required
           />
         </div>
-        <div>
-          <label htmlFor="password">Password</label>
+        <div className="password-container">
+          <label className="password-label" htmlFor="password">Password</label>
           <input
+            className="password-input"
             name="password"
             type="password"
             placeholder="Password"
@@ -69,7 +71,7 @@ const LoginForm = () => {
           />
         </div>
         <div>
-          <button type="submit">Login</button>
+          <button className="login-btn" type="submit">Login</button>
         </div>
       </form>
     </div>

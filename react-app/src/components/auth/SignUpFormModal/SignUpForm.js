@@ -142,7 +142,7 @@ const SignUpForm = () => {
             onChange={updateImage}
           ></input>
         </div>
-        <div id="signup-button">
+        <div>
           <button className="signup-btn" type="submit">Sign Up</button>
         </div>
       </form>
