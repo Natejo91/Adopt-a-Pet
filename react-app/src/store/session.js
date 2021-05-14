@@ -83,7 +83,6 @@ export const signUp = (firstname, lastname, email, image, zipcode, password) => 
     formData.append('password', password)
     formData.append('zipcode', zipcode)
 
-    console.log(firstname, lastname, email, image, zipcode, password)
 
     const response = await fetch("/api/auth/signup", {
         method: "POST",
