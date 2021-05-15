@@ -1,13 +1,46 @@
 .shelter-animal-list {
     position: relative;
-    margin-left: 100px;
+    left: 7%;
+    width: 70%;
     margin-top: 50px;
 }
 
-.shelter-description {
+.shelter-page-description {
+    background-color: white;
     position: relative;
-    left: 55%;
-    bottom: 200px;
-    width: 400px;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    box-shadow:  rgb(0 0 0 / 30%) 0px 19px 38px, rgb(0 0 0 / 22%) 0px 15px 12px;
+    border-radius: 10px;
+}
 
+.shelter-location-icon {
+    position: relative;
+    right: 40px;
+    top: 20px;
+    max-height: 35px;
+    max-width: 35px;
+}
+
+.shelter-animal-header {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    color: black;
+    width: fit-content;
+    position: relative;
+    left: 17%;
+    padding: 20px;
+    box-shadow:  rgb(0 0 0 / 30%) 0px 19px 38px, rgb(0 0 0 / 22%) 0px 15px 12px;
+    border-radius: 10px;
+}
+
+.shelter-page-container {
+    position: relative;
+    float: right;
+    right: 10%;
+    margin-bottom: 300px;
+    margin-top: 45px;
 }

@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import SmallAnimalTile from '../SmallAnimalTile/SmallAnimalTile';
 import { getUserFavorites } from '../../store/favorites';
+import './FavoritesPage.css';
 
 
 function FavoritesPage() {
@@ -14,7 +15,7 @@ function FavoritesPage() {
 
     return (
         <>
-            <div>
+            <div className="favorite-page-title">
                 <h1>Your Favorite Animals!</h1>
             </div>
             <div className='favorite-tile-container'>
