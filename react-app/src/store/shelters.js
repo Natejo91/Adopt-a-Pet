@@ -16,11 +16,11 @@ export const getShelters = () => async dispatch => {
 }
 
 export const getOneShelter = (shelterId) => async dispatch => {
-    const response = await fetch(`/api/shelter/${shelterId}`)
+    const response = await fetch(`/api/shelters/${shelterId}`)
 
     if (response.ok) {
         const shelter = await response.json();
-        dispatch(load([shelter]))
+        dispatch(load(shelter))
     }
 }
 

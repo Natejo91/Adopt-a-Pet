@@ -1,5 +1,6 @@
 import React from 'react';
 import { GoogleMap, LoadScript, Marker, InfoWindow } from '@react-google-maps/api';
+import { Link } from 'react-router-dom';
 import { useState } from 'react';
 
 
@@ -148,7 +149,7 @@ const MapContainer = ({ shelter }) => {
                     >
                         <div className="map-window">
                             <div>
-                                <a href={`/shelter/${selected.id}`}>{selected.name}</a>
+                                <Link to={`/shelters/${selected.id}`}>{selected.name}</Link>
                                 <div>{selected.address}</div>
                             </div>
                         </div>

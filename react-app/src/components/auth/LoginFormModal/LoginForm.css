@@ -6,7 +6,6 @@
 
 .login-btn {
     position: relative;
-    left: 33%;
     top: 30px;
     width: 120px;
     height: 40px;
@@ -33,7 +32,6 @@
 
 .demo-btn {
     position: relative;
-    left: 9%;
     top: 40px;
     width: 120px;
     height: 40px;
@@ -56,4 +54,14 @@
     background-color: #c6ae6d;
     box-shadow: 0px 15px 20px #c6ae6d;
     transform: translateY(-7px);
+}
+
+.login-button-container {
+    display: flex;
+    justify-content: center;
+}
+
+.demo-button-container {
+    display: flex;
+    justify-content: center;
 }

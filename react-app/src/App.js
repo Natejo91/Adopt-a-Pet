@@ -12,6 +12,7 @@ import AnimalPage from "./components/AnimalPage/AnimalPage";
 import SearchResultPage from "./components/SearchResultPage/SearchResultPage";
 import Footer from "./components/Footer/Footer";
 import FavoritesPage from "./components/FavoritesPage/FavoritesPage";
+import ShelterPage from "./components/ShelterPage/ShelterPage";
 
 // import { authenticate } from "./services/auth";
 import { authenticate } from "./store/session";
@@ -60,6 +61,9 @@ function App() {
         <ProtectedRoute path="/favorites" exact={true}>
           <FavoritesPage />
         </ProtectedRoute>
+        <Route path="/shelters/:id" exact={true}>
+          <ShelterPage />
+        </Route>
       </Switch>
       <Footer />
     </>
