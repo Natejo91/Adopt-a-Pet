@@ -7,11 +7,10 @@ import SignUpFormModal from '../auth/SignUpFormModal';
 import Search from '../Search/Search';
 import './NavBar.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faDog, faPaw, faHome } from '@fortawesome/free-solid-svg-icons';
+import { faPaw, faHome } from '@fortawesome/free-solid-svg-icons';
 
 const NavBar = () => {
   const user = useSelector(state => state.session?.user)
-
 
 
   return (
