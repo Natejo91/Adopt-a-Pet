@@ -497,23 +497,9 @@ def seed_animals():
     db.session.add(animal37)
 
 
-    #44344566
-    animal38 = Animal(
-        type='Cat',
-        name='Chloe',
-        age='Adult',
-        gender='Female',
-        breed_id=173,
-        description='Chloe Babe is nominated for "best head boop" and "best super hero mask" here at the FACE Clinic resident awards ceremony. She is a super loving cat and wants nothing more than for you to pet her. She has issues urinating on her own so she is looking for someone that can help express her bladder twice daily. She is very easy to care for and will show you how grateful she is to have a person around. She gets along great with other cats and loves all people. She is a joy to be around and will brighten even the cloudiest day with her sweet purr and radiant cheer. Chloe is spayed/neutered, FELV/FIV tested, microchipped, and up to date on vaccinations. If interested in meeting or adopting this animal please fill out an adoption application at facespayneuter.org.',
-        shelter_id=7
-    )
-
-    db.session.add(animal38)
-
-
     #animals from shelter IN45
     #51243994
-    animal39 = Animal(
+    animal38 = Animal(
         type='Dog',
         name='Xena',
         age='Young',
@@ -523,11 +509,11 @@ def seed_animals():
         shelter_id=8
     )
 
-    db.session.add(animal39)
+    db.session.add(animal38)
 
 
     #51073558
-    animal40 = Animal(
+    animal39 = Animal(
         type='Dog',
         name='Nico',
         age='Young',
@@ -537,11 +523,11 @@ def seed_animals():
         shelter_id=8
     )
 
-    db.session.add(animal40)
+    db.session.add(animal39)
 
 
     #50837409
-    animal41 = Animal(
+    animal40 = Animal(
         type='Dog',
         name='Jasmine',
         age='Young',
@@ -551,11 +537,11 @@ def seed_animals():
         shelter_id=8
     )
 
-    db.session.add(animal41)
+    db.session.add(animal40)
 
     #animals from shelter TX1920
     #49699018
-    animal42 = Animal(
+    animal41 = Animal(
         type='Dog',
         name='Leela',
         age='Adult',
@@ -565,10 +551,10 @@ def seed_animals():
         shelter_id=9
     )
 
-    db.session.add(animal42)
+    db.session.add(animal41)
 
     #48021772
-    animal43 = Animal(
+    animal42 = Animal(
         type='Dog',
         name='Haiti',
         age='Young',
@@ -578,23 +564,10 @@ def seed_animals():
         shelter_id=9
     )
 
-    db.session.add(animal43)
-
-    #48021772
-    animal44 = Animal(
-        type='Dog',
-        name='Leela',
-        age='Young',
-        gender='Female',
-        breed_id=150,
-        description='You will meet the most wonderful dog you will ever meet. Leela love all human and dogs at all size. Leela was adopted from Harris county a couple of years ago. But the family adopted her and then just keep her outside in the back yard never spend time with her, taking care of her. Leela was heartworm positive when she was adopted but the family never treated her. You would think since she spend all her time alone in the back yard she would be timid when she meet you but she is opposite she yearn for human touch, she yearn for her family to spend time with her, snuggle together, sitting outside enjoyed the sun or just sitting next to each other. When you meet Leela you would not think she is 8 years old. She is still full of energy, love to run chase ball or just sitting outside with you. Leela is German Shepard mix with Norwegian Elkhound. Leela is spay, microchip, up today with all her vaccine and she is being treated for heartworm. Leela is now ready for furever home.',
-        shelter_id=9
-    )
-
-    db.session.add(animal44)
+    db.session.add(animal42)
 
     #47323951
-    animal45 = Animal(
+    animal43 = Animal(
         type='Dog',
         name='Monte',
         age='Young',
@@ -604,10 +577,10 @@ def seed_animals():
         shelter_id=9
     )
 
-    db.session.add(animal45)
+    db.session.add(animal43)
 
     #46510065
-    animal46 = Animal(
+    animal44 = Animal(
         type='Dog',
         name='Shelby',
         age='Puppy',
@@ -617,10 +590,10 @@ def seed_animals():
         shelter_id=9
     )
 
-    db.session.add(animal46)
+    db.session.add(animal44)
 
     #43469245
-    animal47 = Animal(
+    animal45 = Animal(
         type='Dog',
         name='Zeus',
         age='Young',
@@ -630,10 +603,10 @@ def seed_animals():
         shelter_id=9
     )
 
-    db.session.add(animal47)
+    db.session.add(animal45)
 
     #46508475
-    animal48 = Animal(
+    animal46 = Animal(
         type='Dog',
         name='Sophie',
         age='Puppy',
@@ -643,10 +616,10 @@ def seed_animals():
         shelter_id=9
     )
 
-    db.session.add(animal48)
+    db.session.add(animal46)
 
     #48104651
-    animal49 = Animal(
+    animal47 = Animal(
         type='Dog',
         name='Roadie',
         age='Puppy',
@@ -656,10 +629,10 @@ def seed_animals():
         shelter_id=9
     )
 
-    db.session.add(animal49)
+    db.session.add(animal47)
 
     #49698076
-    animal50 = Animal(
+    animal48 = Animal(
         type='Dog',
         name='Colton',
         age='Puppy',
@@ -669,10 +642,10 @@ def seed_animals():
         shelter_id=9
     )
 
-    db.session.add(animal50)
+    db.session.add(animal48)
 
     #40522316
-    animal51 = Animal(
+    animal49 = Animal(
         type='Dog',
         name='Blue',
         age='Young',
@@ -682,12 +655,12 @@ def seed_animals():
         shelter_id=9
     )
 
-    db.session.add(animal51)
+    db.session.add(animal49)
 
 
     #animals from shelter CA458
     #50496617
-    animal52 = Animal(
+    animal50 = Animal(
         type='Cat',
         name='Earl Grey',
         age='Adult',
@@ -697,10 +670,10 @@ def seed_animals():
         shelter_id=10
     )
 
-    db.session.add(animal52)
+    db.session.add(animal50)
 
     #50293810
-    animal53 = Animal(
+    animal51 = Animal(
         type='Cat',
         name='Louise',
         age='Kitten',
@@ -710,10 +683,10 @@ def seed_animals():
         shelter_id=10
     )
 
-    db.session.add(animal53)
+    db.session.add(animal51)
 
     #50654966
-    animal54 = Animal(
+    animal52 = Animal(
         type='Cat',
         name='Murr',
         age='Adult',
@@ -723,10 +696,10 @@ def seed_animals():
         shelter_id=10
     )
 
-    db.session.add(animal54)
+    db.session.add(animal52)
 
     #50654785
-    animal55 = Animal(
+    animal53 = Animal(
         type='Cat',
         name='Norm',
         age='Adult',
@@ -736,10 +709,10 @@ def seed_animals():
         shelter_id=10
     )
 
-    db.session.add(animal55)
+    db.session.add(animal53)
 
     #51412287
-    animal56 = Animal(
+    animal54 = Animal(
         type='Cat',
         name='Copper',
         age='Adult',
@@ -749,10 +722,10 @@ def seed_animals():
         shelter_id=10
     )
 
-    db.session.add(animal56)
+    db.session.add(animal54)
 
     #51047697
-    animal57 = Animal(
+    animal55 = Animal(
         type='Cat',
         name='Star',
         age='Adult',
@@ -762,10 +735,10 @@ def seed_animals():
         shelter_id=10
     )
 
-    db.session.add(animal57)
+    db.session.add(animal55)
 
     #50496646
-    animal58 = Animal(
+    animal56 = Animal(
         type='Cat',
         name='Barn Mouse',
         age='Kitten',
@@ -775,10 +748,10 @@ def seed_animals():
         shelter_id=10
     )
 
-    db.session.add(animal58)
+    db.session.add(animal56)
 
     #50414597
-    animal59 = Animal(
+    animal57 = Animal(
         type='Cat',
         name='Lavender',
         age='Adult',
@@ -788,10 +761,10 @@ def seed_animals():
         shelter_id=10
     )
 
-    db.session.add(animal59)
+    db.session.add(animal57)
 
     #50435750
-    animal60 = Animal(
+    animal58 = Animal(
         type='Cat',
         name='Shirley',
         age='Adult',
@@ -801,7 +774,7 @@ def seed_animals():
         shelter_id=10
     )
 
-    db.session.add(animal60)
+    db.session.add(animal58)
     db.session.commit()
 
 

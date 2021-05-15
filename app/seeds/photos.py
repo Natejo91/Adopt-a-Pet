@@ -500,7 +500,425 @@ def seed_photos():
 
     db.session.add(photo70)
 
+    photo71 = Photo(
+        animal_id=36,
+        image_url='https://pet-python-project.s3.us-east-2.amazonaws.com/petID36.jpg'
+    )
 
+    db.session.add(photo71)
+
+    photo72 = Photo(
+        animal_id=36,
+        image_url='https://pet-python-project.s3.us-east-2.amazonaws.com/petID36-2.jpg'
+    )
+
+    db.session.add(photo72)
+
+    photo73 = Photo(
+        animal_id=36,
+        image_url='https://pet-python-project.s3.us-east-2.amazonaws.com/petID36-3.jpg'
+    )
+
+    db.session.add(photo73)
+
+    photo74 = Photo(
+        animal_id=37,
+        image_url='https://pet-python-project.s3.us-east-2.amazonaws.com/petID37.jpg'
+    )
+
+    db.session.add(photo74)
+
+    photo75 = Photo(
+        animal_id=37,
+        image_url='https://pet-python-project.s3.us-east-2.amazonaws.com/petID37-2.jpg'
+    )
+
+    db.session.add(photo75)
+
+    photo76 = Photo(
+        animal_id=38,
+        image_url='https://pet-python-project.s3.us-east-2.amazonaws.com/petID38.jpg'
+    )
+
+    db.session.add(photo76)
+
+    photo77 = Photo(
+        animal_id=39,
+        image_url='https://pet-python-project.s3.us-east-2.amazonaws.com/petID39.jpg'
+    )
+
+    db.session.add(photo77)
+
+    photo78 = Photo(
+        animal_id=39,
+        image_url='https://pet-python-project.s3.us-east-2.amazonaws.com/petID39-2.jpg'
+    )
+
+    db.session.add(photo78)
+
+    photo79 = Photo(
+        animal_id=40,
+        image_url='https://pet-python-project.s3.us-east-2.amazonaws.com/petID40.jpg'
+    )
+
+    db.session.add(photo79)
+
+    photo80 = Photo(
+        animal_id=41,
+        image_url='https://pet-python-project.s3.us-east-2.amazonaws.com/petID41.jpg'
+    )
+
+    db.session.add(photo80)
+
+    photo81 = Photo(
+        animal_id=41,
+        image_url='https://pet-python-project.s3.us-east-2.amazonaws.com/petID41-2.jpg'
+    )
+
+    db.session.add(photo81)
+
+    photo82 = Photo(
+        animal_id=41,
+        image_url='https://pet-python-project.s3.us-east-2.amazonaws.com/petID41-3.jpg'
+    )
+
+    db.session.add(photo82)
+
+    photo83 = Photo(
+        animal_id=42,
+        image_url='https://pet-python-project.s3.us-east-2.amazonaws.com/petID42.jpg'
+    )
+
+    db.session.add(photo83)
+
+    photo84 = Photo(
+        animal_id=42,
+        image_url='https://pet-python-project.s3.us-east-2.amazonaws.com/petID42-2.jpg'
+    )
+
+    db.session.add(photo84)
+
+    photo85 = Photo(
+        animal_id=42,
+        image_url='https://pet-python-project.s3.us-east-2.amazonaws.com/petID42-3.jpg'
+    )
+
+    db.session.add(photo85)
+
+    photo86 = Photo(
+        animal_id=43,
+        image_url='https://pet-python-project.s3.us-east-2.amazonaws.com/petID43.jpg'
+    )
+
+    db.session.add(photo86)
+
+    photo87 = Photo(
+        animal_id=43,
+        image_url='https://pet-python-project.s3.us-east-2.amazonaws.com/petID43-2.jpg'
+    )
+
+    db.session.add(photo87)
+
+    photo88 = Photo(
+        animal_id=44,
+        image_url='https://pet-python-project.s3.us-east-2.amazonaws.com/petID44.jpg'
+    )
+
+    db.session.add(photo88)
+
+    photo89 = Photo(
+        animal_id=44,
+        image_url='https://pet-python-project.s3.us-east-2.amazonaws.com/petID44-2.jpg'
+    )
+
+    db.session.add(photo89)
+
+    photo90 = Photo(
+        animal_id=44,
+        image_url='https://pet-python-project.s3.us-east-2.amazonaws.com/petID44-3.jpg'
+    )
+
+    db.session.add(photo90)
+
+    photo91 = Photo(
+        animal_id=45,
+        image_url='https://pet-python-project.s3.us-east-2.amazonaws.com/petID45.jpg'
+    )
+
+    db.session.add(photo91)
+
+    photo92 = Photo(
+        animal_id=45,
+        image_url='https://pet-python-project.s3.us-east-2.amazonaws.com/petID45-2.jpg'
+    )
+
+    db.session.add(photo92)
+
+    photo93 = Photo(
+        animal_id=45,
+        image_url='https://pet-python-project.s3.us-east-2.amazonaws.com/petID45-3.jpg'
+    )
+
+    db.session.add(photo93)
+
+    photo94 = Photo(
+        animal_id=46,
+        image_url='https://pet-python-project.s3.us-east-2.amazonaws.com/petID46.jpg'
+    )
+
+    db.session.add(photo94)
+
+    photo95 = Photo(
+        animal_id=46,
+        image_url='https://pet-python-project.s3.us-east-2.amazonaws.com/petID46-2.jpg'
+    )
+
+    db.session.add(photo95)
+
+    photo96 = Photo(
+        animal_id=46,
+        image_url='https://pet-python-project.s3.us-east-2.amazonaws.com/petID46-3.jpg'
+    )
+
+    db.session.add(photo96)
+
+    photo97 = Photo(
+        animal_id=47,
+        image_url='https://pet-python-project.s3.us-east-2.amazonaws.com/petID47.jpg'
+    )
+
+    db.session.add(photo97)
+
+    photo98 = Photo(
+        animal_id=47,
+        image_url='https://pet-python-project.s3.us-east-2.amazonaws.com/petID47-2.jpg'
+    )
+
+    db.session.add(photo98)
+
+    photo99 = Photo(
+        animal_id=47,
+        image_url='https://pet-python-project.s3.us-east-2.amazonaws.com/petID47-3.jpg'
+    )
+
+    db.session.add(photo99)
+
+    photo100 = Photo(
+        animal_id=48,
+        image_url='https://pet-python-project.s3.us-east-2.amazonaws.com/petID48.jpg'
+    )
+
+    db.session.add(photo100)
+
+    photo101 = Photo(
+        animal_id=48,
+        image_url='https://pet-python-project.s3.us-east-2.amazonaws.com/petID48-2.jpg'
+    )
+
+    db.session.add(photo101)
+
+    photo102 = Photo(
+        animal_id=48,
+        image_url='https://pet-python-project.s3.us-east-2.amazonaws.com/petID48-3.jpg'
+    )
+
+    db.session.add(photo102)
+
+    photo103 = Photo(
+        animal_id=49,
+        image_url='https://pet-python-project.s3.us-east-2.amazonaws.com/petID49.jpg'
+    )
+
+    db.session.add(photo103)
+
+    photo104 = Photo(
+        animal_id=49,
+        image_url='https://pet-python-project.s3.us-east-2.amazonaws.com/petID49-2.jpg'
+    )
+
+    db.session.add(photo104)
+
+    photo105 = Photo(
+        animal_id=50,
+        image_url='https://pet-python-project.s3.us-east-2.amazonaws.com/petID50.jpg'
+    )
+
+    db.session.add(photo105)
+
+    photo106 = Photo(
+        animal_id=50,
+        image_url='https://pet-python-project.s3.us-east-2.amazonaws.com/petID50-2.jpg'
+    )
+
+    db.session.add(photo106)
+
+    photo107 = Photo(
+        animal_id=51,
+        image_url='https://pet-python-project.s3.us-east-2.amazonaws.com/petID51.jpg'
+    )
+
+    db.session.add(photo107)
+
+    photo108 = Photo(
+        animal_id=51,
+        image_url='https://pet-python-project.s3.us-east-2.amazonaws.com/petID51-2.jpg'
+    )
+
+    db.session.add(photo108)
+
+    photo109 = Photo(
+        animal_id=51,
+        image_url='https://pet-python-project.s3.us-east-2.amazonaws.com/petID51-3.jpg'
+    )
+
+    db.session.add(photo109)
+
+    photo110 = Photo(
+        animal_id=52,
+        image_url='https://pet-python-project.s3.us-east-2.amazonaws.com/petID52.jpg'
+    )
+
+    db.session.add(photo110)
+
+    photo111 = Photo(
+        animal_id=52,
+        image_url='https://pet-python-project.s3.us-east-2.amazonaws.com/petID52-2.jpg'
+    )
+
+    db.session.add(photo111)
+
+    photo112 = Photo(
+        animal_id=52,
+        image_url='https://pet-python-project.s3.us-east-2.amazonaws.com/petID52-3.jpg'
+    )
+
+    db.session.add(photo112)
+
+    photo113 = Photo(
+        animal_id=53,
+        image_url='https://pet-python-project.s3.us-east-2.amazonaws.com/petID53.jpg'
+    )
+
+    db.session.add(photo113)
+
+    photo114 = Photo(
+        animal_id=53,
+        image_url='https://pet-python-project.s3.us-east-2.amazonaws.com/petID53-2.jpg'
+    )
+
+    db.session.add(photo114)
+
+    photo115 = Photo(
+        animal_id=53,
+        image_url='https://pet-python-project.s3.us-east-2.amazonaws.com/petID53-3.jpg'
+    )
+
+    db.session.add(photo115)
+
+    photo116 = Photo(
+        animal_id=54,
+        image_url='https://pet-python-project.s3.us-east-2.amazonaws.com/petID54.jpg'
+    )
+
+    db.session.add(photo116)
+
+    photo117 = Photo(
+        animal_id=54,
+        image_url='https://pet-python-project.s3.us-east-2.amazonaws.com/petID54-2.jpg'
+    )
+
+    db.session.add(photo117)
+
+    photo118 = Photo(
+        animal_id=54,
+        image_url='https://pet-python-project.s3.us-east-2.amazonaws.com/petID54-3.jpg'
+    )
+
+    db.session.add(photo118)
+
+    photo119 = Photo(
+        animal_id=55,
+        image_url='https://pet-python-project.s3.us-east-2.amazonaws.com/petID55.jpg'
+    )
+
+    db.session.add(photo119)
+
+    photo120 = Photo(
+        animal_id=55,
+        image_url='https://pet-python-project.s3.us-east-2.amazonaws.com/petID55-2.jpg'
+    )
+
+    db.session.add(photo120)
+
+    photo121 = Photo(
+        animal_id=55,
+        image_url='https://pet-python-project.s3.us-east-2.amazonaws.com/petID55-3.jpg'
+    )
+
+    db.session.add(photo121)
+
+    photo122 = Photo(
+        animal_id=56,
+        image_url='https://pet-python-project.s3.us-east-2.amazonaws.com/petID56.jpg'
+    )
+
+    db.session.add(photo122)
+
+    photo123 = Photo(
+        animal_id=56,
+        image_url='https://pet-python-project.s3.us-east-2.amazonaws.com/petID56-2.jpg'
+    )
+
+    db.session.add(photo123)
+
+    photo124 = Photo(
+        animal_id=56,
+        image_url='https://pet-python-project.s3.us-east-2.amazonaws.com/petID56-3.jpg'
+    )
+
+    db.session.add(photo124)
+
+    photo125 = Photo(
+        animal_id=57,
+        image_url='https://pet-python-project.s3.us-east-2.amazonaws.com/petID57.jpg'
+    )
+
+    db.session.add(photo125)
+
+    photo126 = Photo(
+        animal_id=57,
+        image_url='https://pet-python-project.s3.us-east-2.amazonaws.com/petID57-2.jpg'
+    )
+
+    db.session.add(photo126)
+
+    photo127 = Photo(
+        animal_id=57,
+        image_url='https://pet-python-project.s3.us-east-2.amazonaws.com/petID57-3.jpg'
+    )
+
+    db.session.add(photo127)
+
+    photo128 = Photo(
+        animal_id=58,
+        image_url='https://pet-python-project.s3.us-east-2.amazonaws.com/petID58.jpg'
+    )
+
+    db.session.add(photo128)
+
+    photo129 = Photo(
+        animal_id=58,
+        image_url='https://pet-python-project.s3.us-east-2.amazonaws.com/petID58-2.jpg'
+    )
+
+    db.session.add(photo129)
+
+    photo130 = Photo(
+        animal_id=58,
+        image_url='https://pet-python-project.s3.us-east-2.amazonaws.com/petID58-3.jpg'
+    )
+
+    db.session.add(photo130)
 
     db.session.commit()
 
