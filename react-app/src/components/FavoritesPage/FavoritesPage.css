@@ -1,0 +1,16 @@
+.favorite-tile-container {
+    display: flex;
+    justify-content: center;
+}
+
+.favorite-page-title {
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    box-shadow:  rgb(0 0 0 / 30%) 0px 19px 38px, rgb(0 0 0 / 22%) 0px 15px 12px;
+    border-radius: 10px;
+    margin-top: 20px;
+    width: 400px;
+    position: relative;
+    left: 39.5%;
+}

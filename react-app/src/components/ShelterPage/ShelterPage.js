@@ -30,11 +30,11 @@ function ShelterPage() {
 
     return (
         <>
-            <div className="shelter-info-container">
+            <div className="shelter-page-container">
                 <div className="shelter-img">
                     <img src={shelterInfo.image_url} alt={"👽"} className="shelter-icon"/>
                 </div>
-                <div className="shelter-description">
+                <div className="shelter-page-description">
                     <div>
                         <MapContainer shelter={shelterInfo}/>
                     </div>
@@ -51,6 +51,9 @@ function ShelterPage() {
                         {shelterInfo.phone_number}
                     </div>
                 </div>
+            </div>
+            <div className="shelter-animal-header">
+                <h1>Current pets at {shelterInfo.name}</h1>
             </div>
             <div className="shelter-animal-list">
                 {animals.map((animal, i) => (

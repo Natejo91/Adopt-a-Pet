@@ -1,6 +1,6 @@
 import React from 'react';
 import { GoogleMap, LoadScript, Marker, InfoWindow } from '@react-google-maps/api';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { useState } from 'react';
 
 
@@ -149,7 +149,7 @@ const MapContainer = ({ shelter }) => {
                     >
                         <div className="map-window">
                             <div>
-                                <Link to={`/shelters/${selected.id}`}>{selected.name}</Link>
+                                <NavLink to={`/shelters/${selected.id}`}>{selected.name}</NavLink>
                                 <div>{selected.address}</div>
                             </div>
                         </div>
