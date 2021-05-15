@@ -23,7 +23,8 @@ class Shelter(db.Model):
             "email": self.email,
             "office_hours": self.office_hours,
             "description": self.description,
-            "image_url": self.image_url
+            "image_url": self.image_url,
+            "animals": [animal.to_dict() for animal in self.animals]
         }
 
 

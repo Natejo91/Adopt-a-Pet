@@ -22,4 +22,4 @@ def get_shelter(id):
     '''
 
     shelter = Shelter.query.get(id)
-    return [shelter.to_dict()]
+    return jsonify([shelter.to_dict()])

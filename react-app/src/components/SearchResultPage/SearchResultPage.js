@@ -11,11 +11,11 @@ function SearchResultPage() {
     return (
         <div className="search-results-container">
             <h1>Inside SearchResultPage component</h1>
-            {type_results.map(animal => (
-                    <SmallAnimalTile animal={animal} />
+            {type_results.map((animal, i) => (
+                    <SmallAnimalTile animal={animal} key={i} />
                 ))}
-            {breed_results.map(animal => (
-                    <SmallAnimalTile animal={animal} />
+            {breed_results.map((animal, i) => (
+                    <SmallAnimalTile animal={animal} key={i}/>
                 ))}
         </div>
     )
