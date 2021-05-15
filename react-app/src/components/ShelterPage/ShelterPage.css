@@ -3,3 +3,11 @@
     margin-left: 100px;
     margin-top: 50px;
 }
+
+.shelter-description {
+    position: relative;
+    left: 55%;
+    bottom: 200px;
+    width: 400px;
+
+}
