@@ -26,7 +26,7 @@ function Search() {
                     className="search-input"
                 />
                 <div>
-                    <button onClick={(e) => handleSearch(e)} type="submit">Search</button>
+                    <button className="search-btn" onClick={(e) => handleSearch(e)} type="submit">Search</button>
                 </div>
             </form>
         </div>
