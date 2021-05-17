@@ -10,7 +10,9 @@ function SearchResultPage() {
 
     return (
         <div className="search-results-container">
-            <h1>Inside SearchResultPage component</h1>
+            <div className="search-page-header">
+                <h1>Your search results</h1>
+            </div>
             {type_results.map((animal, i) => (
                     <SmallAnimalTile animal={animal} key={i} />
                 ))}
