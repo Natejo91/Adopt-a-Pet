@@ -36,7 +36,7 @@ When a user first comes to the website they will immediately see the home page. 
 
 ## Animal Page
 
-After clicking on one of the animal tiles you will be brought to that animals page.  On the animal page you will see all the information about that animal, including the information on the shelter with a google map to help with location. 
+After clicking on one of the animal tiles you will be brought to that animals page.  On the animal page you will see all the information about that animal, including the animals pictures, animal information, and breed information.  The shelter the animal is located at is also displayed here using Google Map API.  Towards the bottom of the page you will see the adoption form to inquire about the animal.  This form will only appear after you have logged in as a user.
 
 ![AnimalPage](https://github.com/Natejo91/Adopt-a-Pet/blob/main/assets/animalpage1.PNG)
 ![AnimalPage2](https://github.com/Natejo91/Adopt-a-Pet/blob/main/assets/animal-info.PNG)
