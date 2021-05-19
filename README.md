@@ -39,3 +39,4 @@ When a user first comes to the website they will immediately see the home page. 
 After clicking on one of the animal tiles you will be brought to that animals page.  On the animal page you will see all the information about that animal, including the information on the shelter with a google map to help with location. 
 
 ![AnimalPage](https://github.com/Natejo91/Adopt-a-Pet/blob/main/assets/animalpage.PNG)
+![AnimalPage2](https://github.com/Natejo91/Adopt-a-Pet/blob/main/assets/animal-info.PNG)
