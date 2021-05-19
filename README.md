@@ -44,3 +44,7 @@ After clicking on one of the animal tiles you will be brought to that animals pa
 
 
 ## Favorite Page
+
+Once you are logged in you while see a heart icon appear on all animal tiles.  You are able to click these hearts to add animals to your favorites page. They will be saved to your user so whenever you log back in to the site, it will remember all of your favorited animals.
+
+![FavoritePage](https://github.com/Natejo91/Adopt-a-Pet/blob/main/assets/favorite-Page.PNG)
