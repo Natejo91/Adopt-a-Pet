@@ -48,3 +48,10 @@ After clicking on one of the animal tiles you will be brought to that animals pa
 Once you are logged in you while see a heart icon appear on all animal tiles.  You are able to click these hearts to add animals to your favorites page. They will be saved to your user so whenever you log back in to the site, it will remember all of your favorited animals.
 
 ![FavoritePage](https://github.com/Natejo91/Adopt-a-Pet/blob/main/assets/favorite-Page.PNG)
+
+
+## Shelter Page
+
+You can get to the shelter page from any animal page by clicking on the marker in the Google Map API.  One you are on the shelter page you will still see all of the shelter's information but you will no get a list of animals that are located at that shelter.
+
+![ShelterPage](https://github.com/Natejo91/Adopt-a-Pet/blob/main/assets/shelter-page.PNG)
