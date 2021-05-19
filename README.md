@@ -27,6 +27,6 @@ In addition to those 3 MVP's I was able to implement these bonus features:
 For more details on the MVP's used, check out the MVP guide *[here](https://github.com/Natejo91/Adopt-a-Pet/wiki/MVP-Feature-List)*
 
 
-
+# Home Page
 
 ![HomePage](https://github.com/Natejo91/Adopt-a-Pet/blob/main/assets/pet-homepage.PNG)
