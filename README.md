@@ -41,3 +41,6 @@ After clicking on one of the animal tiles you will be brought to that animals pa
 ![AnimalPage](https://github.com/Natejo91/Adopt-a-Pet/blob/main/assets/animalpage1.PNG)
 ![AnimalPage2](https://github.com/Natejo91/Adopt-a-Pet/blob/main/assets/animal-info.PNG)
 ![AnimalPage3](https://github.com/Natejo91/Adopt-a-Pet/blob/main/assets/adoption%20form.PNG)
+
+
+## Favorite Page
