@@ -32,3 +32,10 @@ For more details on the MVP's used, check out the MVP guide *[here](https://gith
 When a user first comes to the website they will immediately see the home page.  This will have a list of animal tiles on it displaying the animals picture and their name and also has the website banner. You will see a navigation bar at the home with a home button, search bar, and login and signup buttons.
 
 ![HomePage](https://github.com/Natejo91/Adopt-a-Pet/blob/main/assets/pet-homepage.PNG)
+
+
+## Animal Page
+
+After clicking on one of the animal tiles you will be brought to that animals page.  On the animal page you will see all the information about that animal, including the information on the shelter with a google map to help with location. 
+
+![AnimalPage](https://github.com/Natejo91/Adopt-a-Pet/blob/main/assets/animalpage.PNG)
