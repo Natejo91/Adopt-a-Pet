@@ -40,12 +40,12 @@ function SmallAnimalTile({ animal }) {
                 </NavLink>
                 {user && loaded &&
                     <div className="heart-filled" onClick={() => handleClick(animal.id)}>
-                        <FontAwesomeIcon icon={faHeart} size="2x"/>
+                        <FontAwesomeIcon icon={faHeart} size="2x" color="green"/>
                     </div>
                 }
                 {user && !loaded &&
                     <div className="heart-button" onClick={() => handleClick(animal.id)}>
-                        <FontAwesomeIcon icon={farHeart} size="2x"/>
+                        <FontAwesomeIcon icon={farHeart} size="2x" color="green"/>
                     </div>
                 }
             </div>
