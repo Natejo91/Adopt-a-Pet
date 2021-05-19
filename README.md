@@ -25,3 +25,7 @@ In addition to those 3 MVP's I was able to implement these bonus features:
 - Shelter Map   - Was able to implement Google Map API for the exact location of the animal shelters.  Implemented an InfoWindow as well to allow the user to click on the map to                     take you to the shelter page.
 
 For more details on the MVP's used, check out the MVP guide *[here](https://github.com/Natejo91/Adopt-a-Pet/wiki/MVP-Feature-List)*
+
+
+
+
