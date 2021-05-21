@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import LogoutButton from '../auth/LogoutButton/LogoutButton';
 import LoginFormModal from '../auth/LoginFormModal';
 import SignUpFormModal from '../auth/SignUpFormModal';
+import UserFormModal from '../UserFormModal';
 import Search from '../Search/Search';
 import './NavBar.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -38,14 +39,14 @@ const NavBar = () => {
             </NavLink>
           }
         </div>
-        {/* <div>
-          <NavLink to="/users" exact={true} activeClassName="active">
-            Users
-          </NavLink>
-        </div> */}
+        <div className="profile-button">
+          {user &&
+            <UserFormModal />
+          }
+        </div>
         {user &&
           <div className="logout-button">
-              <LogoutButton />
+            <LogoutButton />
           </div>
         }
         <div className="search-bar">

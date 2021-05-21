@@ -28,10 +28,15 @@
 
 .logout-button {
     position: relative;
-    left: 12%;
+    left: 6%;
 }
 
 .signup-button {
     position: relative;
-    left: 28%;
+    left: 31%;
+}
+
+.profile-button {
+    position: relative;
+    left: 16.3%;
 }
