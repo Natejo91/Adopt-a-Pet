@@ -14,6 +14,7 @@ from .api.shelter_routes import shelter_routes
 from .api.breed_routes import breed_routes
 from .api.favorite_routes import favorite_routes
 from .api.adoption_routes import adoption_routes
+from .api.map_routes import map_routes
 
 from .seeds import seed_commands
 
@@ -43,6 +44,7 @@ app.register_blueprint(shelter_routes, url_prefix='/api/shelters')
 app.register_blueprint(breed_routes, url_prefix='/api/breeds')
 app.register_blueprint(favorite_routes, url_prefix='/api/favorites')
 app.register_blueprint(adoption_routes, url_prefix='/api/adoptions')
+app.register_blueprint(map_routes, url_prefix='/api/map')
 db.init_app(app)
 Migrate(app, db)
 

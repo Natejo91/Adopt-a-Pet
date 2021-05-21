@@ -1,12 +1,29 @@
 import React from 'react';
 import { GoogleMap, LoadScript, Marker, InfoWindow } from '@react-google-maps/api';
 import { NavLink } from 'react-router-dom';
-import { useState } from 'react';
+import { useSelector } from 'react-redux';
+import { useState, useEffect } from 'react';
 
 
 
 const MapContainer = ({ shelter }) => {
     const [selected, setSelected] = useState({});
+    const [loaded, setLoaded] = useState(false);
+    const [mapkey, setMapkey] = useState('');
+    const animalShelter = useSelector(state => state.animals.shelter)
+
+    useEffect(() => {
+        if (!animalShelter) {
+            return
+        }
+        (async () => {
+            const response = await fetch('/api/map')
+            const map = await response.json();
+            console.log(map, "API KEY")
+            setMapkey(map)
+            setLoaded(true)
+        })();
+    }, [animalShelter])
 
     const onSelect = item => {
         setSelected(item);
@@ -125,7 +142,7 @@ const MapContainer = ({ shelter }) => {
         }
     ]
 
-    const ApiKey = process.env.REACT_APP_GOOGLE_API_KEY;
+    // const ApiKey = process.env.REACT_APP_GOOGLE_API_KEY;
 
 
     const location = locations.filter(location => {
@@ -138,26 +155,30 @@ const MapContainer = ({ shelter }) => {
     const defaultCenter = location[0].location
 
     return (
-        <LoadScript googleMapsApiKey={ApiKey}>
-            <GoogleMap mapContainerStyle={mapStyles} zoom={12} center={defaultCenter}>
-                <Marker key={shelter.name} position={defaultCenter} onClick={() => onSelect(shelter)} />
-                {selected.name && (
-                    <InfoWindow
-                    position={defaultCenter}
-                    clickable={true}
-                    onCloseClick={() => setSelected({})}
-                    >
-                        <div className="map-window">
-                            <div>
-                                <NavLink to={`/shelters/${selected.id}`}>{selected.name}</NavLink>
-                                <div>{selected.address}</div>
-                            </div>
-                        </div>
-                    </InfoWindow>
-                    )
-                }
-            </GoogleMap>
-        </LoadScript>
+        <>
+            {loaded &&
+                <LoadScript googleMapsApiKey={mapkey}>
+                    <GoogleMap mapContainerStyle={mapStyles} zoom={12} center={defaultCenter}>
+                        <Marker key={shelter.name} position={defaultCenter} onClick={() => onSelect(shelter)} />
+                        {selected.name && (
+                            <InfoWindow
+                            position={defaultCenter}
+                            clickable={true}
+                            onCloseClick={() => setSelected({})}
+                            >
+                                <div className="map-window">
+                                    <div>
+                                        <NavLink to={`/shelters/${selected.id}`}>{selected.name}</NavLink>
+                                        <div>{selected.address}</div>
+                                    </div>
+                                </div>
+                            </InfoWindow>
+                            )
+                        }
+                    </GoogleMap>
+                </LoadScript>
+            }
+        </>
     )
 }
 
