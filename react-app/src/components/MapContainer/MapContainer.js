@@ -19,7 +19,6 @@ const MapContainer = ({ shelter }) => {
         (async () => {
             const response = await fetch('/api/map')
             const map = await response.json();
-            console.log(map, "API KEY")
             setMapkey(map)
             setLoaded(true)
         })();
