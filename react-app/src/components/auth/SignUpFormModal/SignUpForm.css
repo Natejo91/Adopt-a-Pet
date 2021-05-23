@@ -135,3 +135,8 @@
     box-shadow: 0px 15px 20px #c6ae6d;
     transform: translateY(-7px);
   }
+
+.photo-required {
+    display: flex;
+    justify-content: center;
+}

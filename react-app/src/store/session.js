@@ -112,19 +112,24 @@ export const signUp = (firstname, lastname, email, image, zipcode, password) => 
         body: formData
     });
 
-    if (response.ok) {
-        const data = await response.json();
-        dispatch(setUser(data));
-    } else {
-        throw Error(response.statusText);
+    const data = await response.json();
+    if (data.errors) {
+        return data
     }
+    dispatch(setUser(data));
+    return data
 }
+
+export const deleteUser = () => async () => {
+    await fetch(`/api/users`, {
+        method: "DELETE"
+    })
+};
 
 // reducer
 
 const initialState = { user: null };
 
-// useSelector(state => state.session.user)
 
 export default function reducer(state = initialState, action) {
     switch (action.type) {

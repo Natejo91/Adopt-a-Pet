@@ -21,7 +21,7 @@ const SignUpForm = () => {
   const onSignUp = async (e) => {
     e.preventDefault();
     if (password === repeatPassword) {
-      const data = dispatch(signUp(firstname, lastname, email, image, zipcode, password));
+      const data = await dispatch(signUp(firstname, lastname, email, image, zipcode, password));
       if (data.errors) {
         setErrors(data.errors);
       } else {
@@ -67,9 +67,9 @@ const SignUpForm = () => {
     <div className="signup-container">
       <h1 className="singup">Sign Up</h1>
       <form onSubmit={onSignUp}>
-        <div>
-          {errors.map((error) => (
-            <div>{error}</div>
+        <div className="errors-container">
+          {errors.map((error, i) => (
+            <div className="errors" key={i}>{error}</div>
           ))}
         </div>
         <div className="firstname-container">
@@ -137,6 +137,9 @@ const SignUpForm = () => {
             value={repeatPassword}
             required={true}
           ></input>
+        </div>
+        <div className="photo-required">
+          <h3>Profile Photo Not Required</h3>
         </div>
         <div className="photo-container">
           <label className="photo-label">Photo Url</label>

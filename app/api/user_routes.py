@@ -68,7 +68,7 @@ def update_user():
     return currentUser.to_dict()
 
 
-@user_routes.route('/<int:id>', methods=['DELETE'])
+@user_routes.route('', methods=['DELETE'])
 @login_required
 def delete_user():
     '''

@@ -6,7 +6,6 @@ import './UpdateUserForm.css';
 function UpdateUserForm() {
     const dispatch = useDispatch();
     const user = useSelector(state => state.session.user)
-    const [image, setImage] = useState(null);
     const [firstname, setFirstname] = useState('');
     const [lastname, setLastname] = useState('');
     const [email, setEmail] = useState('');
@@ -32,6 +31,7 @@ function UpdateUserForm() {
         };
     };
 
+
     const updateFirstname = (e) => {
         setFirstname(e.target.value);
     };
@@ -55,13 +55,6 @@ function UpdateUserForm() {
     const updateRepeatPassword = (e) => {
         setRepeatPassword(e.target.value)
     }
-
-    const updateImage = (e) => {
-        const file = e.target.files[0];
-        setImage(file)
-    }
-
-
 
 
     return (

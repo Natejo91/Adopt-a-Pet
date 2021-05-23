@@ -1,11 +1,21 @@
 import React from "react";
-import { useSelector } from 'react-redux';
-import { NavLink } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import { deleteUser, logout} from '../../store/session';
+import { useHistory } from 'react-router-dom';
 import UpdateUserFormModal from '../UpdateUserFormModal';
 import './UserForm.css';
 
 function UserForm() {
+  const history = useHistory();
+  const dispatch = useDispatch();
   const user = useSelector(state => state.session.user)
+
+  const removeUser = async (e) => {
+    e.preventDefault();
+    await dispatch(deleteUser())
+    await dispatch(logout())
+    await history.push('/');
+}
 
 
   if (!user) {
@@ -32,9 +42,16 @@ function UserForm() {
         </div>
         {/* possibly put users favorite animals names here as well */}
       </div>
-      <div className="update-container">
-        <UpdateUserFormModal />
-      </div>
+      {user.id !== 1 &&
+        <div className="update-container">
+          <UpdateUserFormModal />
+        </div>
+      }
+      {user.id !== 1 &&
+        <div className="delete-container">
+          <button className="delete-btn" onClick={(e) => removeUser(e)}>Delete Account</button>
+        </div>
+      }
     </>
 
   );
