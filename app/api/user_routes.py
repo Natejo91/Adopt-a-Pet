@@ -34,8 +34,7 @@ def user():
     return user.to_dict()
 
 
-@user_routes.route('/<int:id>', methods=['PATCH'])
-@login_required
+@user_routes.route('', methods=['PATCH'])
 def update_user():
     '''
     Updates user information
@@ -43,43 +42,30 @@ def update_user():
     if current_user.id == 1:
         return
 
-    if "image" not in request.files:
-        return {"errors": "image required"}, 400
-
-    image = request.files["image"]
-
-    if not allowed_file(image.filename):
-        return {"errors": "file type not permitted"}, 400
-
-    image.filename = get_unique_filename(image.filename)
-
-    upload = upload_file_to_s3(image)
-
-    if "url" not in upload:
-        # if the dictionary doesn't have a url key
-        # it means that there was an error when we tried to upload
-        # so we send back that error message
-        return upload, 400
-
-    url = upload["url"]
-
     userId = current_user.id
-    form = SignupForm()
-    form['csrf_token'].data = request.cookies['csrf_token']
-    if form.validate_on_submit():
-        user = User(
-            first_name = form.data['first_name'],
-            last_name = form.data['last_name'],
-            zipcode = form.data['zipcode'],
-            email = form.data['email'],
-            password = form.data['password'],
-            image_url = url
-        )
-        db.session.add(user)
-        db.session.commit()
-        login_user(user)
-        return user.to_dict()
-    return {'errors': validation_errors_to_error_messages(form.errors)}, 401
+
+    newFirstname = request.form['first_name'];
+    newLastname = request.form['last_name'];
+    newZipcode = request.form['zipcode'];
+    newEmail = request.form['email'];
+    newPassword = request.form['password'];
+
+    currentUser = User.query.get(userId)
+
+    if newFirstname:
+        currentUser.first_name = newFirstname
+    if newLastname:
+        currentUser.last_name = newLastname
+    if newZipcode:
+        currentUser.zipcode = newZipcode
+    if newEmail:
+        currentUser.email = newEmail
+    if newPassword:
+        currentUser.password = newPassword
+
+
+    db.session.commit()
+    return currentUser.to_dict()
 
 
 @user_routes.route('/<int:id>', methods=['DELETE'])

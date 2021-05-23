@@ -1,7 +1,6 @@
 import React from 'react';
 import { GoogleMap, LoadScript, Marker, InfoWindow } from '@react-google-maps/api';
 import { NavLink } from 'react-router-dom';
-import { useSelector } from 'react-redux';
 import { useState, useEffect } from 'react';
 
 
@@ -10,19 +9,15 @@ const MapContainer = ({ shelter }) => {
     const [selected, setSelected] = useState({});
     const [loaded, setLoaded] = useState(false);
     const [mapkey, setMapkey] = useState('');
-    const animalShelter = useSelector(state => state.animals.shelter)
 
     useEffect(() => {
-        if (!animalShelter) {
-            return
-        }
         (async () => {
             const response = await fetch('/api/map')
             const map = await response.json();
             setMapkey(map)
             setLoaded(true)
         })();
-    }, [animalShelter])
+    }, [])
 
     const onSelect = item => {
         setSelected(item);
@@ -140,8 +135,6 @@ const MapContainer = ({ shelter }) => {
             }
         }
     ]
-
-    // const ApiKey = process.env.REACT_APP_GOOGLE_API_KEY;
 
 
     const location = locations.filter(location => {

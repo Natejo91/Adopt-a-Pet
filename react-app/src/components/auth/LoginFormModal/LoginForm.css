@@ -65,3 +65,14 @@
     display: flex;
     justify-content: center;
 }
+
+.errors {
+    color: red;
+
+}
+
+.errors-container {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 10px;
+}

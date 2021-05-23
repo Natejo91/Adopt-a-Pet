@@ -80,6 +80,7 @@ const SignUpForm = () => {
             name="first_name"
             onChange={updateFirstname}
             value={firstname}
+            required={true}
           ></input>
         </div>
         <div className="lastname-container">
@@ -90,6 +91,7 @@ const SignUpForm = () => {
             name="last_name"
             onChange={updateLastname}
             value={lastname}
+            required={true}
           ></input>
         </div>
         <div className="email-container">
@@ -100,6 +102,7 @@ const SignUpForm = () => {
             name="email"
             onChange={updateEmail}
             value={email}
+            required={true}
           ></input>
         </div>
         <div className="zipcode-container">
@@ -110,6 +113,7 @@ const SignUpForm = () => {
             name="zipcode"
             onChange={updateZipcode}
             value={zipcode}
+            required={true}
           ></input>
         </div>
         <div className="password-container">
@@ -120,6 +124,7 @@ const SignUpForm = () => {
             name="password"
             onChange={updatePassword}
             value={password}
+            required={true}
           ></input>
         </div>
         <div className="confirm-container">

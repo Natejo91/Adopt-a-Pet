@@ -1,0 +1,28 @@
+#profile-photo {
+    max-width: 150px;
+    max-height: 150px;
+    border-radius: 50%;
+    margin-bottom: 25px;
+    box-shadow:  rgb(0 0 0 / 30%) 0px 19px 38px, rgb(0 0 0 / 22%) 0px 15px 12px;
+}
+
+.profile-photo-container {
+    display: flex;
+    justify-content: center;
+}
+
+.profile-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.firstname-profile-container,
+.lastname-profile-container,
+.email-profile-container,
+.zipcode-profile-container {
+    padding: 10px;
+}
+
+.update-container {
+    padding-top: 20px;
+}
