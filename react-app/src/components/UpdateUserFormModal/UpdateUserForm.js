@@ -93,7 +93,7 @@ function UpdateUserForm() {
                     <label className="email-label">Email</label>
                     <input
                         className="email-input"
-                        type="text"
+                        type="email"
                         name="email"
                         onChange={updateEmail}
                         placeholder={user.email}

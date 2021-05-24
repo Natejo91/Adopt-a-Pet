@@ -27,7 +27,9 @@ const SignUpForm = () => {
       } else {
         background.click();
       }
-    };
+    } else {
+      setErrors(['Passwords do not match'])
+    }
   };
 
   const updateFirstname = (e) => {
@@ -98,7 +100,7 @@ const SignUpForm = () => {
           <label className="email-label">Email</label>
           <input
             className="email-input"
-            type="text"
+            type="email"
             name="email"
             onChange={updateEmail}
             value={email}
