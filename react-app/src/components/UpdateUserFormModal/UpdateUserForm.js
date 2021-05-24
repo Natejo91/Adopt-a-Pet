@@ -6,9 +6,10 @@ import './UpdateUserForm.css';
 function UpdateUserForm() {
     const dispatch = useDispatch();
     const user = useSelector(state => state.session.user)
+    const userImage = useSelector(state => state.session.user.image_url)
     const [firstname, setFirstname] = useState('');
     const [lastname, setLastname] = useState('');
-    const [email, setEmail] = useState('');
+    const [image, setImage] = useState(userImage)
     const [errors, setErrors] = useState([]);
     const [zipcode, setZipcode] = useState(11111);
     const [password, setPassword] = useState('');
@@ -16,19 +17,20 @@ function UpdateUserForm() {
 
     if (!user) return null;
 
-    const userId = user.id
     const background = document.querySelector('#modal-background')
 
-    const update = (e) => {
+    const update = async (e) => {
         e.preventDefault();
         if (password === repeatPassword) {
-            const data = dispatch(updateUser(firstname, lastname, email, zipcode, password, userId));
+            const data = await dispatch(updateUser(firstname, lastname, zipcode, password, image));
             if (data.errors) {
                 setErrors(data.errors);
             } else {
                 background.click();
             }
-        };
+        } else {
+            setErrors(['Passwords do not match'])
+        }
     };
 
 
@@ -38,10 +40,6 @@ function UpdateUserForm() {
 
     const updateLastname = (e) => {
         setLastname(e.target.value);
-    }
-
-    const updateEmail = (e) => {
-        setEmail(e.target.value);
     }
 
     const updateZipcode = (e) => {
@@ -56,13 +54,18 @@ function UpdateUserForm() {
         setRepeatPassword(e.target.value)
     }
 
+    const updateImage = (e) => {
+        const file = e.target.files[0];
+        setImage(file)
+    }
+
 
     return (
         <>
             <form onSubmit={update}>
-                <div>
-                    {errors.map((error) => (
-                        <div>{error}</div>
+                <div className="errors-container">
+                    {errors.map((error, i) => (
+                        <div className="errors" key={i}>{error}</div>
                     ))}
                 </div>
                 <div className="firstname-container">
@@ -85,18 +88,6 @@ function UpdateUserForm() {
                         name="last_name"
                         onChange={updateLastname}
                         placeholder={user.last_name}
-                        required
-                    >
-                    </input>
-                </div>
-                <div className="email-container">
-                    <label className="email-label">Email</label>
-                    <input
-                        className="email-input"
-                        type="email"
-                        name="email"
-                        onChange={updateEmail}
-                        placeholder={user.email}
                         required
                     >
                     </input>
@@ -136,6 +127,15 @@ function UpdateUserForm() {
                         required
                     >
                     </input>
+                </div>
+                <div className="photo-container">
+                    <label className="photo-label">Photo Url</label>
+                    <input
+                        className="photo-input"
+                        type="file"
+                        accept="image/*"
+                        onChange={updateImage}
+                    ></input>
                 </div>
                 <div>
                     <button className="update-btn" type="submit">Update</button>

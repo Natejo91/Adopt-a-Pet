@@ -66,20 +66,19 @@ export const logout = () => async (dispatch) => {
             "Content-Type": "application/json",
         }
     });
-    if (response.ok) {
-        const data = await response.json();
-        dispatch(removeUser());
-
-    } else {
-        throw Error(response.statusText);
+    const data = await response.json();
+    if (data.errors) {
+        return data
     }
+    dispatch(removeUser());
+    return data
 };
 
-export const updateUser = (firstname, lastname, email, zipcode, password) => async (dispatch) => {
+export const updateUser = (firstname, lastname, zipcode, password, image) => async (dispatch) => {
     const formData = new FormData();
     formData.append('first_name', firstname)
     formData.append('last_name', lastname)
-    formData.append('email', email)
+    formData.append('image', image)
     formData.append('password', password)
     formData.append('zipcode', zipcode)
 
@@ -87,13 +86,12 @@ export const updateUser = (firstname, lastname, email, zipcode, password) => asy
         method: "PATCH",
         body: formData
     })
-
-    if (response.ok) {
-        const data = await response.json();
-        dispatch(setUser(data))
-    } else {
-        throw Error(response.statusText);
+    const data = await response.json();
+    if (data.errors) {
+        return data
     }
+    dispatch(setUser(data))
+    return data
 }
 
 
