@@ -21,13 +21,15 @@ const SignUpForm = () => {
   const onSignUp = async (e) => {
     e.preventDefault();
     if (password === repeatPassword) {
-      const data = dispatch(signUp(firstname, lastname, email, image, zipcode, password));
+      const data = await dispatch(signUp(firstname, lastname, email, image, zipcode, password));
       if (data.errors) {
         setErrors(data.errors);
       } else {
         background.click();
       }
-    };
+    } else {
+      setErrors(['Passwords do not match'])
+    }
   };
 
   const updateFirstname = (e) => {
@@ -67,9 +69,9 @@ const SignUpForm = () => {
     <div className="signup-container">
       <h1 className="singup">Sign Up</h1>
       <form onSubmit={onSignUp}>
-        <div>
-          {errors.map((error) => (
-            <div>{error}</div>
+        <div className="errors-container">
+          {errors.map((error, i) => (
+            <div className="errors" key={i}>{error}</div>
           ))}
         </div>
         <div className="firstname-container">
@@ -80,6 +82,7 @@ const SignUpForm = () => {
             name="first_name"
             onChange={updateFirstname}
             value={firstname}
+            required={true}
           ></input>
         </div>
         <div className="lastname-container">
@@ -90,16 +93,18 @@ const SignUpForm = () => {
             name="last_name"
             onChange={updateLastname}
             value={lastname}
+            required={true}
           ></input>
         </div>
         <div className="email-container">
           <label className="email-label">Email</label>
           <input
             className="email-input"
-            type="text"
+            type="email"
             name="email"
             onChange={updateEmail}
             value={email}
+            required={true}
           ></input>
         </div>
         <div className="zipcode-container">
@@ -110,6 +115,7 @@ const SignUpForm = () => {
             name="zipcode"
             onChange={updateZipcode}
             value={zipcode}
+            required={true}
           ></input>
         </div>
         <div className="password-container">
@@ -120,6 +126,7 @@ const SignUpForm = () => {
             name="password"
             onChange={updatePassword}
             value={password}
+            required={true}
           ></input>
         </div>
         <div className="confirm-container">
@@ -132,6 +139,9 @@ const SignUpForm = () => {
             value={repeatPassword}
             required={true}
           ></input>
+        </div>
+        <div className="photo-required">
+          <h3>Profile Photo Not Required</h3>
         </div>
         <div className="photo-container">
           <label className="photo-label">Photo Url</label>

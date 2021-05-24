@@ -21,7 +21,7 @@ function Search() {
             <form method="get" action={`/api/search/`} onSubmit={(e) => handleSearch(e)}>
                 <input
                     value={search}
-                    placeholder='Search...'
+                    placeholder='        Dog | Cat | Breed'
                     onChange={(e) => setSearch(e.target.value)}
                     className="search-input"
                 />

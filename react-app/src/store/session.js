@@ -5,6 +5,7 @@ const ADD_FAVORITE = "session/ADD_FAVORITE";
 const REMOVE_FAVORITE = "session/REMOVE_FAVORITE";
 
 
+
 const setUser = (user) => ({
     type: SET_USER,
     payload: user
@@ -14,10 +15,13 @@ const removeUser = () => ({
     type: REMOVE_USER
 })
 
+
+// thunks
 export const addFavorite = (animalId) => ({
     type: ADD_FAVORITE,
     payload: animalId
 })
+
 
 export const removeFavorite = (animalId) => ({
     type: REMOVE_FAVORITE,
@@ -25,7 +29,6 @@ export const removeFavorite = (animalId) => ({
 })
 
 
-// thunks
 export const authenticate = () => async (dispatch) => {
     const response = await fetch('/api/auth/', {
         headers: {
@@ -49,13 +52,12 @@ export const login = (email, password) => async (dispatch) => {
             password
         })
     });
-    if (response.ok) {
-        const data = await response.json();
-        dispatch(setUser(data));
-        return data;
-    } else {
-        // throw Error(response.statusText);
+    const data = await response.json();
+    if (data.errors) {
+        return data
     }
+    dispatch(setUser(data));
+    return data;
 }
 
 export const logout = () => async (dispatch) => {
@@ -73,8 +75,29 @@ export const logout = () => async (dispatch) => {
     }
 };
 
+export const updateUser = (firstname, lastname, email, zipcode, password) => async (dispatch) => {
+    const formData = new FormData();
+    formData.append('first_name', firstname)
+    formData.append('last_name', lastname)
+    formData.append('email', email)
+    formData.append('password', password)
+    formData.append('zipcode', zipcode)
 
-export const signUp = (firstname, lastname, email, image, zipcode, password) => async (dispatch)=> {
+    const response = await fetch(`/api/users`, {
+        method: "PATCH",
+        body: formData
+    })
+
+    if (response.ok) {
+        const data = await response.json();
+        dispatch(setUser(data))
+    } else {
+        throw Error(response.statusText);
+    }
+}
+
+
+export const signUp = (firstname, lastname, email, image, zipcode, password) => async (dispatch) => {
     const formData = new FormData();
     formData.append('first_name', firstname)
     formData.append('last_name', lastname)
@@ -89,19 +112,24 @@ export const signUp = (firstname, lastname, email, image, zipcode, password) => 
         body: formData
     });
 
-    if (response.ok) {
-        const data = await response.json();
-        dispatch(setUser(data));
-    } else {
-        throw Error(response.statusText);
+    const data = await response.json();
+    if (data.errors) {
+        return data
     }
+    dispatch(setUser(data));
+    return data
 }
+
+export const deleteUser = () => async () => {
+    await fetch(`/api/users`, {
+        method: "DELETE"
+    })
+};
 
 // reducer
 
 const initialState = { user: null };
 
-// useSelector(state => state.session.user)
 
 export default function reducer(state = initialState, action) {
     switch (action.type) {

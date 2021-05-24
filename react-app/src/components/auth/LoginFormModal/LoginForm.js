@@ -13,10 +13,12 @@ const LoginForm = () => {
   const demoEmail = 'demo@aa.io';
   const demoPassword = 'password';
 
-  const onLogin = (e) => {
+  const onLogin = async (e) => {
     e.preventDefault();
-    dispatch(login(email, password));
-
+    const data = await dispatch(login(email, password));
+    if (data.errors) {
+      setErrors(data.errors)
+    }
   };
 
   const handleDemoLogin = (e) => {
@@ -40,9 +42,9 @@ const LoginForm = () => {
     <div className="login-container">
       <h1>Log In</h1>
       <form onSubmit={onLogin}>
-        <div>
-          {errors.map((error) => (
-            <div>{error}</div>
+        <div className="errors-container">
+          {errors.map((error, i) => (
+            <div className="errors" key={i}>{error}</div>
           ))}
         </div>
         <div className="email-container">
