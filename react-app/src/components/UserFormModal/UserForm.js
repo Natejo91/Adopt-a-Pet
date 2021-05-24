@@ -26,7 +26,7 @@ function UserForm() {
     <>
       <div className="profile-container">
         <div className="profile-photo-container">
-          <img id="profile-photo" src={user.image_url} alt="User profile picture"/>
+          <img id="profile-photo" src={user.image_url} alt="User profile"/>
         </div>
         <div className="firstname-profile-container">
           <strong>First Name | </strong> {user.first_name}

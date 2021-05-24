@@ -9,7 +9,7 @@ function UpdateUserFormModal() {
     return (
         <>
             <div className="wrap">
-                <button className="button" onClick={() => setShowModal(true)}>Update Info</button>
+                <button className="update" onClick={() => setShowModal(true)}>Update Info</button>
             </div>
             {showModal && (
                 <Modal onClose={() => setShowModal(false)}>
