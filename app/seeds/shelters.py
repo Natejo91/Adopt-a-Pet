@@ -41,7 +41,7 @@ def seed_shelters():
     i = 0
     while i < len(shelterIds) -1:
 
-        response = requests.get(f'https://api.petfinder.com/v2/organizations/{shelterIds[i]}', auth=BearerAuth('eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJIYWdiU0ZpcWJ6S3lLeHh5dm1OVTlJV1RSVTZTZDBORFo4WmxRU0h1M2lFQlFRbm83WSIsImp0aSI6ImUzMTIwMTJiZTI3ODUxNGQyZTNjMzJhNjRiOWJlMWIyNTFiZDQ0OGUyOGZmZGIxNTFkMzFlNWEzZDI5ZmE1MzA1NzRlZDgwYWIzMGNmYzE2IiwiaWF0IjoxNjIxMTExMzI4LCJuYmYiOjE2MjExMTEzMjgsImV4cCI6MTYyMTExNDkyOCwic3ViIjoiIiwic2NvcGVzIjpbXX0.nAJJoGRbqwTA7rnZ8o4lhOrCk0X9TPZ6Rrey9YS2ZUAD-KblgzfChF5jCFoA_mnOpg86XvjU146uYvtJdJB2SnpaYtUAtV2Wk7K3Fei6riFXgfUL38aD2-Nzy9tGQRFWh1fUI_TslXDDhhw-vAN_im2JSyjF7VIgJQQ_av5IXJMTa6vP7EVkh8XxUwP9gRu2LHM8VW4pyhGK_9HAit_MGrV9fFns7zCxX539WlWGMmFFqRYPElNtYL91NGaBJJNv2EAK_rlsH11YAOb8kR5J8Ud2Mdpop4Nsye2S3KegGqLgAD-zmTE1I1EKk-1_OYQ1VOb_TTNCDNR1MeB_c5mrsg')).json()
+        response = requests.get(f'https://api.petfinder.com/v2/organizations/{shelterIds[i]}', auth=BearerAuth('eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJIYWdiU0ZpcWJ6S3lLeHh5dm1OVTlJV1RSVTZTZDBORFo4WmxRU0h1M2lFQlFRbm83WSIsImp0aSI6IjZlMTg1ZTY5MWUyMTg2OGRkNjA2NzBhMjRmYjkwMTAxNjAxNjhhYWExYTBhN2M4YWZkZmRjYTNkZmVmNWUyMWVkZWY3NjE1N2MxOGQxMmU4IiwiaWF0IjoxNjIxOTAwNjk0LCJuYmYiOjE2MjE5MDA2OTQsImV4cCI6MTYyMTkwNDI5NCwic3ViIjoiIiwic2NvcGVzIjpbXX0.Hw5OVsn94TaHn0jQCS50AeSdXFv5U5s-XYmS8SolYjz0EjyGbJPxZvVb6HLRNWzTgbvQUBVYdY0ABC3ZkQcziMrZiQI60gxo4kFGFceWsLTCYMQHwkhQY0ierphZ9ldZeGmVyjX3rtDtOWrgSIyze0x76dIzLOZvg_LLAJWAue1Wr0konec9d4RlVq7ZuEyokmGdqBBud1M5e5_uXd_ie8h5ivJBHQqWy1M-EqsuC1sQwGlOm7AyU44ABlfEgyBNY4cMYY8ZuGxSAw1XOF8oabb87POLoQF4imZ6D_Oy-8x3KZYuuvgG2OURivCR086gzhsHeEDH6wYVjDvmR71ixw')).json()
         item = response['organization']
         if item['address']['address1']:
             demo = Shelter(
