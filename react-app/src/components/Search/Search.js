@@ -12,7 +12,11 @@ function Search() {
 
     const handleSearch = async (e) => {
         e.preventDefault();
+        if (search === '') {
+            return
+        }
         await dispatch(getSearch(search))
+        setSearch('');
         history.push(`/search`)
     }
 
@@ -24,6 +28,7 @@ function Search() {
                     placeholder='        Dog | Cat | Breed'
                     onChange={(e) => setSearch(e.target.value)}
                     className="search-input"
+                    required={true}
                 />
                 <div>
                     <button className="search-btn" onClick={(e) => handleSearch(e)} type="submit">Search</button>
