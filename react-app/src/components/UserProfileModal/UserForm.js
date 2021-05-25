@@ -15,7 +15,7 @@ function UserForm() {
     await dispatch(deleteUser())
     await dispatch(logout())
     await history.push('/');
-}
+  }
 
 
   if (!user) {

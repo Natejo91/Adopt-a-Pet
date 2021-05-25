@@ -13,6 +13,7 @@ import * as searchActions from './store/search';
 import * as animalActions from './store/animals';
 import * as breedActions from './store/breeds';
 import * as adoptionActions from './store/adoptions';
+import * as modalActions from './store/modals';
 
 const store = configureStore();
 
@@ -25,6 +26,7 @@ if (process.env.NODE_ENV !== 'production') {
   window.animalActions = animalActions;
   window.breedActions = breedActions;
   window.adoptionActions = adoptionActions;
+  window.modalActions = modalActions;
 
 }
 

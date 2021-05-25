@@ -7,6 +7,7 @@ import shelters from './shelters';
 import breeds from './breeds';
 import favorites from './favorites';
 import adoptions from './adoptions';
+import modals from './modals';
 
 
 const rootReducer = combineReducers({
@@ -16,7 +17,8 @@ const rootReducer = combineReducers({
     shelters,
     breeds,
     favorites,
-    adoptions
+    adoptions,
+    modals
 });
 
 let enhancer;

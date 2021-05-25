@@ -1,6 +1,7 @@
-import React, { useState }from "react";
+import React, { useEffect, useState }from "react";
 import { useSelector, useDispatch } from 'react-redux';
 import { updateUser } from '../../store/session';
+import { hideUploadModal } from '../../store/modals';
 import './UpdateUserForm.css';
 
 function UpdateUserForm() {
@@ -15,9 +16,9 @@ function UpdateUserForm() {
     const [password, setPassword] = useState('');
     const [repeatPassword, setRepeatPassword] = useState('');
 
+
     if (!user) return null;
 
-    const background = document.querySelector('#modal-background')
 
     const update = async (e) => {
         e.preventDefault();
@@ -26,7 +27,7 @@ function UpdateUserForm() {
             if (data.errors) {
                 setErrors(data.errors);
             } else {
-                background.click();
+                dispatch(hideUploadModal())
             }
         } else {
             setErrors(['Passwords do not match'])

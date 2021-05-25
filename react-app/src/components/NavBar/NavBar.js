@@ -1,18 +1,26 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { Modal } from '../../context/Modal'
+import { useSelector, useDispatch } from 'react-redux';
+import UpdateUserForm from '../UpdateUserFormModal/UpdateUserForm';
 import LogoutButton from '../auth/LogoutButton/LogoutButton';
 import LoginFormModal from '../auth/LoginFormModal';
 import SignUpFormModal from '../auth/SignUpFormModal';
-import UserFormModal from '../UserFormModal';
+import UserFormModal from '../UserProfileModal';
+import { hideUploadModal } from '../../store/modals';
 import Search from '../Search/Search';
 import './NavBar.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPaw, faHome } from '@fortawesome/free-solid-svg-icons';
 
 const NavBar = () => {
+  const dispatch = useDispatch();
   const user = useSelector(state => state.session?.user)
+  const modalState = useSelector(state => state.modals.showUploadModal)
 
+  const handleClose = () => {
+    dispatch(hideUploadModal())
+  }
 
   return (
     <nav>
@@ -41,7 +49,14 @@ const NavBar = () => {
         </div>
         <div className="profile-button">
           {user &&
-            <UserFormModal />
+            <>
+              <UserFormModal />
+              {modalState &&
+                <Modal onClose={handleClose}>
+                  <UpdateUserForm />
+                </Modal>
+              }
+            </>
           }
         </div>
         {user &&
