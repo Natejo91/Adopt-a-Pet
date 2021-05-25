@@ -11,7 +11,7 @@ def seed_users():
         zipcode='46410',
         email='demo@aa.io',
         password='password',
-        image_url=None
+        image_url='https://pet-python-project.s3.us-east-2.amazonaws.com/noun_User_3918328.png'
     )
 
     db.session.add(demo)
