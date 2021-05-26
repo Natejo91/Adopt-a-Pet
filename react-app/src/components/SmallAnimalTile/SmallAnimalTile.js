@@ -34,9 +34,9 @@ function SmallAnimalTile({ animal }) {
     return (
         <>
             <div className='animal-tile' key={`${animal.id}`}>
-                <NavLink to={`/animals/${animal.id}`}>
+                <NavLink id="animal-name-link" to={`/animals/${animal.id}`}>
                     <img src={animal.photos[0]?.image_url} alt={"👽"} className='animal-img'/>
-                    <div className='animal-name'>{`${animal.name}`}</div>
+                    <div className='animal-name'><h3>{`${animal.name}`}</h3></div>
                 </NavLink>
                 {user && loaded &&
                     <div className="heart-filled" onClick={() => handleClick(animal.id)}>

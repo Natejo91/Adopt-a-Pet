@@ -14,6 +14,18 @@
     right: 0;
 }
 
+.footer-headers {
+    color: #c6ae6d;
+}
+
+.footer-donation {
+    position: relative;
+    bottom: 20px;
+    left: 30px;
+
+}
+
+
 .copyright {
     display: flex;
     justify-content: center;
@@ -24,4 +36,40 @@
     bottom: 0;
     left: 0;
     right: 0;
+}
+
+.rights-reserved {
+    position: relative;
+    top: 10px;
+}
+
+#footer,
+#footer2,
+#footer3,
+#footer4,
+#footer5,
+#footer6,
+#footer7,
+#footer8 {
+    color: white;
+    text-decoration: none;
+}
+
+#footer:hover,
+#footer2:hover,
+#footer3:hover,
+#footer4:hover,
+#footer5:hover,
+#footer6:hover,
+#footer7:hover,
+#footer8:hover {
+    color: purple;
+}
+
+#footer7 {
+    padding: 10px;
+}
+
+#footer8 {
+    padding: 10px;
 }
