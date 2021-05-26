@@ -38,3 +38,8 @@
     right: 60px;
     top: 275px;
 }
+
+#animal-name-link {
+    color: black;
+    text-decoration: none;
+}
