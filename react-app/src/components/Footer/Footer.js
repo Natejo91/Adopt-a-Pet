@@ -21,7 +21,7 @@ function Footer() {
                 </div>
             </div>
             <div className="copyright">
-            <a id="footer7" href="https://www.linkedin.com/in/nathaniel-ortega-256673206" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin fa-3x"></i></a><p className="rights-reserved">@2021 Adopt-a-Pet.com  |  Nathaniel Ortega all rights reserved.</p><a id="footer8" href="https://github.com/Natejo91/Adopt-a-Pet" target="_blank" rel="noopener noreferrer"><i class="fab fa-github-square fa-3x"></i></a>
+            <a id="footer7" href="https://www.linkedin.com/in/nathaniel-ortega-256673206" target="_blank" rel="noopener noreferrer"><i className="fab fa-linkedin fa-3x"></i></a><p className="rights-reserved">@2021 Adopt-a-Pet.com  |  Nathaniel Ortega all rights reserved.</p><a id="footer8" href="https://github.com/Natejo91/Adopt-a-Pet" target="_blank" rel="noopener noreferrer"><i className="fab fa-github-square fa-3x"></i></a>
             </div>
         </>
     )
