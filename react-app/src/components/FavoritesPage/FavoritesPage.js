@@ -13,6 +13,7 @@ function FavoritesPage() {
         dispatch(getUserFavorites())
     }, [dispatch])
 
+
     return (
         <>
             <div className="favorite-page-title">

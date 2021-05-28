@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { addUserFavorite, removeUserFavorite } from '../../store/favorites';
+import { getUserFavorites, addUserFavorite, removeUserFavorite } from '../../store/favorites';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import { faHeart as farHeart } from '@fortawesome/free-regular-svg-icons';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -17,9 +17,11 @@ function SmallAnimalTile({ animal }) {
     const handleClick = async (animalId) => {
         if (!user.favorite_animals[animal.id]) {
             await dispatch(addUserFavorite(animalId, user.id))
+            dispatch(getUserFavorites())
             setLoaded(true)
         } else {
             await dispatch(removeUserFavorite(animalId, user.id))
+            dispatch(getUserFavorites())
             setLoaded(false)
         }
     }
