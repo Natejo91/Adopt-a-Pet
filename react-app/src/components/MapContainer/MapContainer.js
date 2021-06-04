@@ -1,5 +1,6 @@
 import React from 'react';
 import { GoogleMap, LoadScript, Marker, InfoWindow } from '@react-google-maps/api';
+import Geocode from 'react-geocode';
 import { NavLink } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
@@ -9,12 +10,29 @@ const MapContainer = ({ shelter }) => {
     const [selected, setSelected] = useState({});
     const [loaded, setLoaded] = useState(false);
     const [mapkey, setMapkey] = useState('');
+    // const [geolat, setGeolat] = useState(0);
+    // const [geolng, setGeolng] = useState(0);
+    // const search = shelter.name
 
     useEffect(() => {
         (async () => {
             const response = await fetch('/api/map')
             const map = await response.json();
             setMapkey(map)
+            // Geocode.setApiKey(map);
+            // Geocode.setLanguage("en");
+            // Geocode.setLocationType("ROOFTOP");
+            // Geocode.enableDebug();
+            // Geocode.fromAddress(search).then(
+            //     (response) => {
+            //         const { lat, lng } = response.results[0].geometry.location;
+            //         setGeolat(lat)
+            //         setGeolng(lng)
+            //     },
+            //     (error) => {
+            //         console.error(error);
+            //     }
+            // )
             setLoaded(true)
         })();
     }, [])
